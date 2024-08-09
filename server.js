@@ -82,13 +82,85 @@ function sendMessage(senderId, responseText) {
     )
     .then(() => {
       console.log("Message sent!");
-    })
-    .catch((error) => {
-      console.error("Unable to send message:", error);
-    });
-}
+const express = require('express');
+const bodyParser = require('body-parser');
+const axios = require('axios'); // Utiliser require pour axios
+const dotenv = require('dotenv');
 
-// Lancer le serveur
-app.listen(process.env.PORT || 3000, () => {
-  console.log("Server is running");
+dotenv.config();
+
+const app = express();
+const port = process.env.PORT || 3000;
+
+// Middleware pour parser les requêtes JSON
+app.use(bodyParser.json());
+
+// Route pour la vérification du webhook de Facebook
+app.get('/webhook', (req, res) => {
+  const VERIFY_TOKEN = process.env.FACEBOOK_VERIFY_TOKEN;
+
+  const mode = req.query['hub.mode'];
+  const token = req.query['hub.verify_token'];
+  const challenge = req.query['hub.challenge'];
+
+  if (mode && token) {
+    if (mode === 'subscribe' && token === VERIFY_TOKEN) {
+      console.log('Webhook verified');
+      res.status(200).send(challenge);
+    } else {
+      res.sendStatus(403);
+    }
+  }
+});
+
+// Route pour recevoir les messages de Facebook
+app.post('/webhook', async (req, res) => {
+  const pageAccessToken = process.env.FACEBOOK_PAGE_ACCESS_TOKEN;
+  const body = req.body;
+
+  if (body.object === 'page') {
+    body.entry.forEach(async (entry) => {
+      const messagingEvents = entry.messaging;
+
+      for (let i = 0; i < messagingEvents.length; i++) {
+        const event = messagingEvents[i];
+        if (event.message && event.message.text) {
+          const senderId = event.sender.id;
+          const messageText = event.message.text;
+
+          // Appel à l'API ChatGPT
+          try {
+            const response = await axios.post('https://api.openai.com/v1/chat/completions', {
+              model: 'gpt-3.5-turbo',
+              messages: [{ role: 'user', content: messageText }]
+            }, {
+              headers: {
+                'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`,
+                'Content-Type': 'application/json'
+              }
+            });
+
+            const replyText = response.data.choices[0].message.content;
+
+            // Envoi de la réponse à Facebook Messenger
+            await axios.post(`https://graph.facebook.com/v12.0/me/messages?access_token=${pageAccessToken}`, {
+              recipient: { id: senderId },
+              message: { text: replyText }
+            });
+          } catch (error) {
+            console.error('Error handling message:', error);
+          }
+        }
+      }
+    });
+
+    res.status(200).send('EVENT_RECEIVED');
+  } else {
+    res.sendStatus(404);
+  }
+});
+
+// Démarrer le serveur
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
