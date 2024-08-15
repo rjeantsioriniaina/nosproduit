@@ -1,87 +1,196 @@
+require('dotenv').config();
 const express = require('express');
 const fetch = require('node-fetch');
 const bodyParser = require('body-parser');
 const app = express();
 
-// Remplacez par votre clé API OpenAI
+// Variables d'environnement
 const OPENAI_API_KEY = process.env.OPENAI_API_KEY;
+const PAGE_ACCESS_TOKEN = process.env.PAGE_ACCESS_TOKEN;
 const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 
+// Middleware pour parser les requêtes JSON
 app.use(bodyParser.json());
+
+// Route de base pour vérifier que le serveur fonctionne
+app.get('/', (req, res) => {
+  res.send('Server is running');
+});
 
 // Endpoint pour vérifier le Webhook de Facebook
 app.get('/webhook', (req, res) => {
-  let mode = req.query['hub.mode'];
-  let token = req.query['hub.verify_token'];
-  let challenge = req.query['hub.challenge'];
+  const mode = req.query['hub.mode'];
+  const token = req.query['hub.verify_token'];
+  const challenge = req.query['hub.challenge'];
 
   if (mode && token) {
     if (mode === 'subscribe' && token === VERIFY_TOKEN) {
       console.log('WEBHOOK_VERIFIED');
       res.status(200).send(challenge);
     } else {
-      res.sendStatus(403);
+      res.sendStatus(403); // Forbidden
     }
+  } else {
+    res.sendStatus(400); // Bad Request
   }
 });
 
 // Endpoint pour gérer les messages de Facebook
-app.post('/webhook', (req, res) => {
-  let body = req.body;
+app.post('/webhook', async (req, res) => {
+  const body = req.body;
 
   if (body.object === 'page') {
-    body.entry.forEach(function(entry) {
-      let webhook_event = entry.messaging[0];
+    body.entry.forEach(async (entry) => {
+      const webhook_event = entry.messaging[0];
       console.log(webhook_event);
 
       if (webhook_event.message) {
-        handleMessage(webhook_event.sender.id, webhook_event.message.text);
+        await handleMessage(webhook_event.sender.id, webhook_event.message.text);
       }
     });
 
     res.status(200).send('EVENT_RECEIVED');
   } else {
-    res.sendStatus(404);
+    res.sendStatus(404); // Not Found
   }
 });
 
+// Fonction pour gérer les messages et interagir avec OpenAI
 async function handleMessage(sender_psid, received_message) {
-  const response = await fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      'Authorization': `Bearer ${OPENAI_API_KEY}`
-    },
-    body: JSON.stringify({
-      model: "gpt-3.5-turbo",
-      messages: [{ role: "user", content: received_message }]
-    })
-  });
+  try {
+    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${OPENAI_API_KEY}`
+      },
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [{ role: "user", content: received_message }]
+      })
+    });
 
-  const data = await response.json();
-  const botResponse = data.choices[0].message.content;
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
 
-  callSendAPI(sender_psid, botResponse);
+    const data = await response.json();
+    const botResponse = data.choices[0].message.content;
+
+    await callSendAPI(sender_psid, botResponse);
+  } catch (error) {
+    console.error('Error in handleMessage:', error);
+  }
 }
 
-function callSendAPI(sender_psid, response) {
+// Fonction pour envoyer des messages à l'utilisateur via Facebook Messenger
+async function callSendAPI(sender_psid, response) {
   const request_body = {
-    recipient: { id: sender_psid },
-    message: { text: response }
+    recipient: {
+      id: sender_psid
+    },
+    message: {
+      text: response
+    }
   };
 
-  fetch(`https://graph.facebook.com/v12.0/me/messages?access_token=${process.env.PAGE_ACCESS_TOKEN}`, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(request_body)
-  })
-  .then(response => response.json())
-  .then(data => console.log('message sent!'))
-  .catch(error => console.error('Error:', error));
+  try {
+    const res = await fetch(`https://graph.facebook.com/v16.0/me/messages?access_token=${PAGE_ACCESS_TOKEN}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(request_body)
+    });
+
+    const data = await res.json();
+    if (!res.ok) {
+      console.error('Failed to send message:', data);
+      throw new Error('Failed to send message');
+    }
+
+    console.log('Message sent successfully');
+  } catch (error) {
+    console.error('Error sending message:', error);
+  }
 }
 
-const listener = app.listen(process.env.PORT || 3000, () => {
-  console.log('Your app is listening on port ' + listener.address().port);
+// Fonction pour configurer le bouton "Get Started" et le menu persistant
+async function configureFacebookMessenger() {
+  try {
+    // Configurer le bouton "Get Started"
+    const getStartedPayload = {
+      get_started: {
+        payload: "GET_STARTED"
+      }
+    };
+
+    const resGetStarted = await fetch(`https://graph.facebook.com/v16.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(getStartedPayload)
+    });
+
+    const getStartedData = await resGetStarted.json();
+    if (!resGetStarted.ok) {
+      console.error('Failed to configure Get Started button:', getStartedData);
+      throw new Error('Failed to configure Get Started button');
+    }
+
+    console.log('Get Started button configured successfully');
+
+    // Configurer le menu persistant
+    const persistentMenuPayload = {
+      persistent_menu: [
+        {
+          locale: "default",
+          composer_input_disabled: false,
+          call_to_actions: [
+            {
+              title: "Help",
+              type: "postback",
+              payload: "HELP_PAYLOAD"
+            },
+            {
+              title: "Contact Us",
+              type: "postback",
+              payload: "CONTACT_PAYLOAD"
+            }
+          ]
+        }
+      ]
+    };
+
+    const resMenu = await fetch(`https://graph.facebook.com/v16.0/me/messenger_profile?access_token=${PAGE_ACCESS_TOKEN}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(persistentMenuPayload)
+    });
+
+    const menuData = await resMenu.json();
+    if (!resMenu.ok) {
+      console.error('Failed to configure menu:', menuData);
+      throw new Error('Failed to configure menu');
+    }
+
+    console.log('Facebook Messenger configuration successful');
+  } catch (error) {
+    console.error('Error configuring Facebook Messenger:', error);
+  }
+}
+
+// Démarrage du serveur
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, async () => {
+  console.log('Your app is listening on port ' + PORT);
+
+  try {
+    await configureFacebookMessenger();
+  } catch (error) {
+    console.error('Error during server startup:', error);
+  }
 });
