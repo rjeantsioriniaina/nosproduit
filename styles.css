@@ -31,10 +31,12 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Style des titres des sections produit */
 section h2 {
     color: #333;
 }
 
+/* Style des images des produits */
 section img {
     max-width: 100%;
     height: auto;
@@ -65,4 +67,38 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+}
+
+/* Style pour le compte à rebours */
+#countdown-timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d9534f; /* Couleur rouge pour attirer l'attention */
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Style pour les témoignages */
+#testimonials {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#testimonials h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.testimonial {
+    border-left: 4px solid #007BFF;
+    padding-left: 15px;
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    margin: 0;
+    font-style: italic;
 }
