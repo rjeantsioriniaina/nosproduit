@@ -6,26 +6,37 @@
     <title>Découvrez les Meilleurs Produits Testés et Approuvés - Offres Spéciales en Affiliation</title>
     <link rel="stylesheet" href="styles.css"> <!-- Lien vers le fichier CSS -->
     <style>
-        /* Styles pour les témoignages et le compte à rebours */
-        #testimonials {
-            background-color: #f9f9f9;
-            padding: 20px;
-            margin: 20px 0;
-        }
-        .testimonial {
-            border: 1px solid #ddd;
+         /* Style pour les témoignages */
+        .testimony {
+            display: flex;
+            align-items: center;
+            margin: 20px;
             padding: 15px;
-            margin-bottom: 15px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
-        #countdown {
-            background-color: #ffcccb;
-            padding: 20px;
-            text-align: center;
-            margin: 20px 0;
+        .testimony img {
+            width: 80px; /* Ajustez la taille de l'image */
+            height: 80px;
+            border-radius: 50%; /* Pour une image ronde */
+            margin-right: 15px; /* Espace entre l'image et le texte */
+        }
+        .testimony p {
+            margin: 0;
+            color: #333;
+        }
+        .testimony .name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .testimony .message {
+            font-style: italic;
         }
     </style>
 </head>
 <body>
+
     <header>
         <h1>Découvrez les Meilleurs Produits Testés et Approuvés - Offres Spéciales en Affiliation</h1>
         <p>Bienvenue sur notre site ! Nous sélectionnons pour vous les produits les plus performants du marché. Que vous recherchiez des gadgets innovants, des logiciels de trading efficaces, ou des outils indispensables, nous avons tout ce qu'il vous faut. Profitez de nos avis détaillés, comparatifs, et recommandations pour faire des achats intelligents et rentabiliser vos investissements. Ne manquez pas nos offres spéciales disponibles grâce à nos partenaires affiliés.</p>
@@ -71,18 +82,23 @@
         <!-- Section Témoignages -->
         <section id="testimonials">
             <h2>Témoignages de Clients</h2>
-            <div class="testimonial">
-                <p>"La formation en trading a complètement transformé ma manière d'investir. Les outils sont incroyablement utiles et le support est excellent!"</p>
-                <p>- Marie D.</p>
-            </div>
-            <div class="testimonial">
-                <p>"Le robot de trading automatique a simplifié mes transactions. Je recommande vivement ce produit à tout trader sérieux."</p>
-                <p>- Jean-Pierre T.</p>
-            </div>
-            <div class="testimonial">
-                <p>"Les stratégies de scalping m'ont aidé à améliorer mes performances sur les marchés financiers. Très satisfait!"</p>
-                <p>- Luc S.</p>
-            </div>
+            <div class="testimony">
+        <img src="images/temoignage1.jpg" alt="Témoignage Client">
+        <div>
+            <p class="name">Jean Dupont</p>
+            <p class="message">"C'est le meilleur produit que j'ai jamais acheté! Je le recommande vivement à tout le monde."</p>
+        </div>
+    </div>
+
+
+    <div class="testimony">
+        <img src="images/temoignage2.jpg" alt="Témoignage Client">
+        <div>
+            <p class="name">Marie Durand</p>
+            <p class="message">"Un service incroyable et des produits de qualité. Très satisfait!"</p>
+        </div>
+    </div>
+
         </section>
 
         <!-- Compte à Rebours -->
