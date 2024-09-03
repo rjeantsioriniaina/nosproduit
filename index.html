@@ -96,12 +96,11 @@
     </main>
 
     <footer>
-    <p>&copy; 2024 TopAffiliation - Tous droits réservés.</p>
-    <p>Découvrez les meilleures offres et produits testés et approuvés sur notre site.</p>
-    <p>Pour toute question ou assistance, <a href="mailto:rasolojean44@gmail.com">contactez-nous</a>.</p>
-</footer>
+        <p>&copy; 2024 TopAffiliation - Tous droits réservés.</p>
+        <p>Découvrez les meilleures offres et produits testés et approuvés sur notre site.</p>
+        <p>Pour toute question ou assistance, <a href="mailto:rasolojean44@gmail.com">contactez-nous</a>.</p>
+    </footer>
 
-    <script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
     <script>
         // Script pour le filtrage des produits
         const filterButtons = document.querySelectorAll('.filter-btn');
@@ -144,6 +143,20 @@
             const display = document.querySelector('#countdown-timer');
             startCountdown(countdownDuration, display);
         };
+
+        // Script de redirection automatique avec lien d'affiliation spécifique
+        function redirectToAffiliation(affiliationLink) {
+            window.location.href = affiliationLink;
+        }
+
+        // Ajoutez cet événement au clic des boutons "Acheter maintenant"
+        const buyButtons = document.querySelectorAll('.btn');
+        buyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const affiliationLink = button.getAttribute('data-affiliation');
+                redirectToAffiliation(affiliationLink);
+            });
+        });
     </script>
 </body>
 </html>
