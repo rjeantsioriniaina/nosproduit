@@ -58,6 +58,12 @@ section img {
     background-color: #0056b3;
 }
 
+/* Style pour le container du bouton */
+.button-container {
+    text-align: center; /* Centre le contenu horizontalement */
+    margin-top: 20px;   /* Ajoute un espace au-dessus du bouton */
+}
+
 /* Style du footer */
 footer {
     background-color: #333;
