@@ -29,11 +29,13 @@ section {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centre les éléments dans la section */
 }
 
 /* Style des titres des sections produit */
 section h2 {
     color: #333;
+    margin-bottom: 15px;
 }
 
 /* Style des images des produits */
@@ -52,16 +54,13 @@ section img {
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s;
+    margin-top: 10px;
+    text-align: center; /* Centre le texte à l'intérieur du bouton */
 }
 
-.btn:hover {
-    background-color: #0056b3;
-}
-
-/* Style pour le container du bouton */
-.button-container {
-    text-align: center; /* Centre le contenu horizontalement */
-    margin-top: 20px;   /* Ajoute un espace au-dessus du bouton */
+/* Centre le bouton lui-même */
+.btn {
+    margin: 10px auto; /* Ajoute une marge automatique pour centrer horizontalement */
 }
 
 /* Style du footer */
