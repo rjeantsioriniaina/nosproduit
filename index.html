@@ -12,32 +12,44 @@
         <p>Bienvenue sur notre site ! Nous sélectionnons pour vous les produits les plus performants du marché. Que vous recherchiez des gadgets innovants, des logiciels de trading efficaces, ou des outils indispensables, nous avons tout ce qu'il vous faut. Profitez de nos avis détaillés, comparatifs, et recommandations pour faire des achats intelligents et rentabiliser vos investissements. Ne manquez pas nos offres spéciales disponibles grâce à nos partenaires affiliés.</p>
     </header>
 
+    <!-- Filtre de catégories -->
+    <div id="filters">
+        <button class="filter-btn" data-category="all">Tous</button>
+        <button class="filter-btn" data-category="trading">Trading</button>
+        <button class="filter-btn" data-category="amour">Amour</button>
+        <button class="filter-btn" data-category="sante">Santé</button>
+        <button class="filter-btn" data-category="beaute">Beauté</button>
+        <button class="filter-btn" data-category="argent">Argent</button>
+        <button class="filter-btn" data-category="services">Services</button>
+    </div>
+
     <main>
-        <section id="product1">
-            <h2>Formation complète en ligne au TRADING  
-</h2>
+        <!-- Produit Trading -->
+        <section class="product" data-category="trading">
+            <h2>Formation complète en ligne au TRADING</h2>
             <img src="image-produit1.jpg" alt="Image du produit 1">
-            <p>INFINITY : Formation accélérée aux outils et méthodes professionnels : Carnet d'ordres ; Analyse fondamentale ; Analyse technique ; Market Profile ; Psychologie & MoneyManagement ; Plateforme de Trading. .</p>
+            <p>INFINITY : Formation accélérée aux outils et méthodes professionnels : Carnet d'ordres ; Analyse fondamentale ; Analyse technique ; Market Profile ; Psychologie & MoneyManagement ; Plateforme de Trading.</p>
             <a href="https://1tpe.net/goto.php?dat=jeanr_swissta_1&tk=" class="btn">Acheter maintenant</a>
         </section>
 
-        <section id="product2">
-            <h2>Logiciel de Trading Forex - Robot 100% Automatisé
-</h2>
+        <!-- Produit Logiciel de Trading -->
+        <section class="product" data-category="trading">
+            <h2>Logiciel de Trading Forex - Robot 100% Automatisé</h2>
             <img src="image-produit2.jpg" alt="Image du produit 2">
-            <p>Le Robot FxProfitsRobot vous donne la possibilité de passer des ordres sur le marché forex de manière automatisée tout en minimisant les risques de perte 
-</p>
+            <p>Le Robot FxProfitsRobot vous donne la possibilité de passer des ordres sur le marché forex de manière automatisée tout en minimisant les risques de perte.</p>
             <a href="https://1tpe.net/goto.php?dat=jeanr_keneur_6&tk=" class="btn">Acheter maintenant</a>
         </section>
 
-        <section id="product3">
-            <h2>Strategie de scalping
-</h2>
+        <!-- Produit Stratégie de Scalping -->
+        <section class="product" data-category="trading">
+            <h2>Stratégie de Scalping</h2>
             <img src="image-produit3.jpg" alt="Image du produit 3">
-            <p>Comment devenir un trader professionnel en bourse et Forex grâce aux stratégies de trading des Traders à succès et rentable. 
-</p>
+            <p>Comment devenir un trader professionnel en bourse et Forex grâce aux stratégies de trading des Traders à succès et rentable.</p>
             <a href="https://1tpe.net/goto.php?dat=jeanr_sabrassoul_2&tk=" class="btn">Acheter maintenant</a>
         </section>
+
+        <!-- Ajoutez ici d'autres produits dans leurs catégories respectives -->
+
     </main>
 
     <footer>
@@ -45,5 +57,24 @@
     </footer>
 
     <script src="script.js"></script> <!-- Lien vers le fichier JavaScript -->
+    <script>
+        // Script pour le filtrage des produits
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                
+                products.forEach(product => {
+                    if (category === 'all' || product.getAttribute('data-category') === category) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
