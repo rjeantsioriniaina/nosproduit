@@ -1,3 +1,8 @@
+---
+layout: default
+title: "Page d'Accueil"
+---
+
 # Bienvenue sur Mon Site de Trading
 
 Ce site propose une **formation complète en ligne au trading**, couvrant des sujets tels que :
