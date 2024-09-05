@@ -1,0 +1,81 @@
+/* Style général pour les boutons */
+.btn {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    text-align: center; /* Centre le texte à l'intérieur du bouton */
+    display: inline-block; /* Assure que le bouton s'affiche correctement */
+}
+
+.btn:hover {
+    background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+/* Style du footer */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    margin-top: 20px; /* Ajoute de l'espace au-dessus du footer */
+}
+
+/* Style pour le compte à rebours */
+#countdown-timer {
+    font-size: 24px;
+    font-weight: bold;
+    color: #d9534f; /* Couleur rouge pour attirer l'attention */
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Style pour les témoignages */
+#testimonials {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+#testimonials h3 {
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.testimony {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+}
+
+.testimony img {
+    width: 80px; /* Ajustez la taille de l'image */
+    height: 80px;
+    border-radius: 50%; /* Pour une image ronde */
+    margin-right: 15px; /* Espace entre l'image et le texte */
+}
+
+.testimony p {
+    margin: 0;
+    color: #333;
+}
+
+.testimony .name {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.testimony .message {
+    font-style: italic;
+}
