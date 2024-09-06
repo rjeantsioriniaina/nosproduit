@@ -18,10 +18,19 @@
 
     <!-- Lien vers votre fichier CSS externe -->
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
 
     <style>
-        /* Style général pour les boutons */        .btn {
-            background-color: #28a745;
+        /* Style général pour les boutons */        .btn {            background-color: #28a745;
             color: #fff;
             padding: 12px 30px;
             text-decoration: none;
