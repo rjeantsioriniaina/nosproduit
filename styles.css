@@ -56,3 +56,11 @@ button {
 .testimony .message {
     font-style: italic;
 }
+
+/* CSS pour les images avec la classe 'responsive-img' */
+.responsive-img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ddd; /* Exemple de bordure */
+  margin: 10px 0; /* Espacement vertical */
+}
