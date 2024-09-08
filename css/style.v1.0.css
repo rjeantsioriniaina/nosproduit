@@ -131,7 +131,7 @@ p.description {
     }
 
     /* Style pour le compte à rebours */
-#countdown-timer {
+#countdown {
     font-size: 32px;
     font-weight: bold;
     color: #d9534f; /* Couleur rouge pour attirer l'attention */
