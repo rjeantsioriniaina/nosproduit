@@ -296,6 +296,18 @@ p.description {
     <p>Suivez-nous pour rester informé de nos promotions spéciales et nouveautés : <a href="#" class="text-white fw-bold">LinkedIn</a> | <a href="#" class="text-white fw-bold">Twitter</a> | <a href="#" class="text-white fw-bold">Facebook</a></p>
 </footer>
 
+    <script>
+    if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js').then((registration) => {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch((error) => {
+                console.log('Service Worker registration failed:', error);
+            });
+        });
+    }
+</script>
+
  <script>
         // Script pour le filtrage des produits
         const filterButtons = document.querySelectorAll('.filter-btn');
