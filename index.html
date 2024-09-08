@@ -71,18 +71,50 @@
         color: #FFFFFF; /* Texte blanc pour un bon contraste */
     }
 
-    /* Effet de survol pour les boutons .filter-btn */
-    button.filter-btn:hover {
-        background-color: #218838; /* Couleur verte plus foncée au survol */
-    }
+    /* Style pour les boutons .filter-btn */
+button.filter-btn {
+    padding: 12px 24px; /* Ajustement de la taille pour les zones tactiles */
+    font-size: 16px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #007bff; /* Couleur bleue vive pour un bon contraste */
+    color: #ffffff; /* Texte blanc pour un bon contraste */
+    border: none; /* Enlève la bordure */
+}
 
-    /* Ajustement pour les petits écrans */
-    @media (max-width: 600px) {
-        button.filter-btn {
-            width: 100%;
-            padding: 16px; /* Augmentation du padding pour les petits écrans */
-        }
+/* Effet de survol pour les boutons .filter-btn */
+button.filter-btn:hover {
+    background-color: #0056b3; /* Couleur bleue plus foncée au survol */
+}
+
+/* Ajustement pour les petits écrans */
+@media (max-width: 600px) {
+    button.filter-btn {
+        width: 100%;
+        padding: 16px; /* Augmentation du padding pour les petits écrans */
+        font-size: 18px; /* Augmentation de la taille du texte pour une meilleure lisibilité */
     }
+}
+
+/* Style pour le texte blanc sur fond sombre dans le pied de page */
+footer.bg-dark {
+    background-color: #333333; /* Fond sombre (gris très foncé) */
+    color: #ffffff; /* Couleur du texte (blanc) */
+    text-align: center; /* Centrer le texte */
+    padding: 20px; /* Espace intérieur */
+    font-size: 14px; /* Taille du texte */
+}
+
+/* Liens dans le pied de page */
+footer a.text-white {
+    color: #ffffff; /* Couleur des liens (blanc) */
+    text-decoration: none; /* Enlever la sous-ligne */
+}
+
+footer a.text-white:hover {
+    text-decoration: underline; /* Souligner au survol */
+}
 
     /* Styles pour les en-têtes */
 h1 {
@@ -107,17 +139,6 @@ p.description {
     text-align: center; /* Centrer le texte */
     border-radius: 5px; /* Coins légèrement arrondis */
 }
-
-    /* Style du footer */
-    footer {
-        background-color: #333333; /* Fond gris foncé */
-        color: #FFFFFF; /* Texte blanc pour un bon contraste */
-        text-align: center;
-        padding: 10px;
-        position: fixed;
-        bottom: 0;
-        width: 100%;
-    }
 
     /* Style pour les témoignages */
     .testimony {
