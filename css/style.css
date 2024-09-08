@@ -42,19 +42,28 @@
     }
 
     /* Styles pour les en-têtes */
-    h1 {
-        font-size: 36px;
-        margin-top: 20px;
-        font-weight: bold;
-        color: #007BFF; /* Couleur bleue pour un effet attractif */
-    }
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #007BFF; /* Couleur bleue pour un effet attractif */
+    background-color: #f8f9fa; /* Couleur de fond professionnelle (gris clair) */
+    padding: 10px; /* Ajout de padding pour espacer le texte du bord */
+    text-align: center; /* Centrer le texte */
+    border-radius: 5px; /* Coins légèrement arrondis */
+}
 
-    p.description {
-        font-size: 18px;
-        color: #555;
-        margin: 10px auto;
-        max-width: 800px;
-    }
+/* Styles pour les paragraphes */
+p.description {
+    font-size: 18px;
+    color: #333333; /* Texte gris foncé pour un bon contraste */
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #f8f9fa; /* Couleur de fond professionnelle (gris clair) */
+    padding: 15px; /* Ajout de padding pour espacer le texte du bord */
+    text-align: center; /* Centrer le texte */
+    border-radius: 5px; /* Coins légèrement arrondis */
+}
 
     /* Style du footer */
     footer {
