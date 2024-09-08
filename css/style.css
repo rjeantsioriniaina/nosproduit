@@ -110,13 +110,18 @@ p.description {
     }
 
     /* Style pour le compte à rebours */
-    #countdown-timer {
-        font-size: 32px;
-        font-weight: bold;
-        color: #d9534f; /* Couleur rouge pour attirer l'attention */
-        margin-top: 40px;
-        text-align: center;
-    }
+#countdown-timer {
+    font-size: 32px;
+    font-weight: bold;
+    color: #d9534f; /* Couleur rouge pour attirer l'attention */
+    background-color: #f8f9fa; /* Couleur de fond professionnelle (gris clair) */
+    margin: 40px auto; /* Centrer horizontalement */
+    padding: 20px; /* Espace autour du texte */
+    text-align: center; /* Centrer le texte à l'intérieur */
+    border-radius: 10px; /* Coins arrondis pour un effet plus doux */
+    max-width: 400px; /* Limiter la largeur du bloc */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Légère ombre pour l'effet de profondeur */
+}
 
     /* CSS pour les images avec la classe 'responsive-img' */
     .responsive-img {
