@@ -316,9 +316,9 @@ p.description {
     if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
             navigator.serviceWorker.register('/sw.js').then((registration) => {
-                console.log('Service Worker registered with scope:', registration.scope);
+                console.log('Service Worker enregistré avec le scope :', registration.scope);
             }).catch((error) => {
-                console.log('Service Worker registration failed:', error);
+                console.log('L'enregistrement du Service Worker a échoué :', error);
             });
         });
     }
