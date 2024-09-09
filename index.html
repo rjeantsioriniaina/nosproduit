@@ -312,8 +312,20 @@ p.description {
     <!-- Lien vers ton fichier JavaScript -->
     <script src="js/script.js"></script>
 
-    <script src="/sw.js"></script>
+    <script src="js/sw.js"></script>
 
+     <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then((registration) => {
+                    console.log('Service Worker enregistré avec le scope:', registration.scope);
+                }).catch((error) => {
+                    console.log('Échec de l\'enregistrement du Service Worker:', error);
+                });
+            });
+        }
+     </script>
+    
  <script>
         // Script pour le filtrage des produits
         const filterButtons = document.querySelectorAll('.filter-btn');
