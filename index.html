@@ -310,19 +310,7 @@ p.description {
 </footer>
 
     <!-- Lien vers ton fichier JavaScript -->
-    <script src="https://rjeantsioriniaina.github.io/nosproduits/js/script.js"></script>
-    
-    <script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js').then((registration) => {
-                console.log('Service Worker enregistré avec le scope :', registration.scope);
-            }).catch((error) => {
-                console.log('L'enregistrement du Service Worker a échoué :', error);
-            });
-        });
-    }
-</script>
+    <script src="nosproduits/js/script.js"></script>
 
  <script>
         // Script pour le filtrage des produits
