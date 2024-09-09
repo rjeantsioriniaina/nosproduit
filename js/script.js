@@ -1,14 +1,25 @@
-<script>
-    if ('serviceWorker' in navigator) {
-        window.addEventListener('load', () => {
-            navigator.serviceWorker.register('/sw.js').then((registration) => {
-                console.log('Service Worker registered with scope:', registration.scope);
-            }).catch((error) => {
-                console.log('Service Worker registration failed:', error);
-            });
+// Vérification du support Service Worker par le navigateur
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').then((registration) => {
+            console.log('Service Worker registered with scope:', registration.scope);
+        }).catch((error) => {
+            console.log('Service Worker registration failed:', error);
         });
-    }
-</script>
+    });
+} else {
+    console.log("Service Worker non supporté par le navigateur.");
+}
+
+// Exemple d'une fonction simple
+function afficherMessage() {
+    console.log("Script JS chargé et fonctionnel.");
+}
+
+// Appel de la fonction après le chargement de la page
+window.addEventListener('DOMContentLoaded', (event) => {
+    afficherMessage();
+});
 
 // Fonction pour démarrer le compte à rebours
 function startCountdown(duration, display) {
