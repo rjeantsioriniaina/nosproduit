@@ -57,3 +57,21 @@ window.onload = function() {
         startCountdown(1800, countdownElement);
     }
 };
+
+// Script de redirection automatique avec lien d'affiliation spécifique
+        function redirectToAffiliation(affiliationLink) {
+            window.location.href = affiliationLink;
+        }
+
+
+        // Ajoutez cet événement au clic des boutons "Acheter maintenant"
+        const buyButtons = document.querySelectorAll('.btn');
+        buyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const affiliationLink = button.getAttribute('data-affiliation');
+                redirectToAffiliation(affiliationLink);
+            });
+        });
+    </script>
+</body>
+</html>
