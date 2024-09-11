@@ -42,13 +42,6 @@ function startCountdown(duration, display) {
     }, 1000);
 }
 
-// Ajoute un événement de clic à tous les boutons avec la classe 'btn'
-document.querySelectorAll(".btn").forEach(function(button) {
-    button.addEventListener("click", function() {
-        alert("Vous allez être redirigé vers la page d'achat.");
-    });
-});
-
 // Démarre le compte à rebours lorsque la fenêtre est complètement chargée
 window.onload = function() {
     const countdownElement = document.querySelector("#countdown-timer");
@@ -58,20 +51,23 @@ window.onload = function() {
     }
 };
 
+// Ajoute un événement de clic à tous les boutons avec la classe 'btn'
+document.querySelectorAll(".btn").forEach(function(button) {
+    button.addEventListener("click", function() {
+        alert("Vous allez être redirigé vers la page d'achat.");
+    });
+});
+
 // Script de redirection automatique avec lien d'affiliation spécifique
-        function redirectToAffiliation(affiliationLink) {
-            window.location.href = affiliationLink;
-        }
+function redirectToAffiliation(affiliationLink) {
+    window.location.href = affiliationLink;
+}
 
-
-        // Ajoutez cet événement au clic des boutons "Acheter maintenant"
-        const buyButtons = document.querySelectorAll('.btn');
-        buyButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const affiliationLink = button.getAttribute('data-affiliation');
-                redirectToAffiliation(affiliationLink);
-            });
-        });
-    </script>
-</body>
-</html>
+// Ajoutez cet événement au clic des boutons "Acheter maintenant"
+const buyButtons = document.querySelectorAll('.btn');
+buyButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const affiliationLink = button.getAttribute('data-affiliation');
+        redirectToAffiliation(affiliationLink);
+    });
+});
