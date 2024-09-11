@@ -63,8 +63,9 @@ function redirectToAffiliation(affiliationLink) {
     window.location.href = affiliationLink;
 }
 
-// Utilisation de la même variable 'buyButtons' sans la redéclarer
-const buyButtons = document.querySelectorAll('.btn');
+// Suppression de la redéclaration de 'buyButtons'
+let buyButtons = document.querySelectorAll('.btn'); // Utilisation de 'let' ou 'var' pour éviter les conflits potentiels avec d'autres déclarations
+
 buyButtons.forEach(button => {
     button.addEventListener('click', () => {
         const affiliationLink = button.getAttribute('data-affiliation');
