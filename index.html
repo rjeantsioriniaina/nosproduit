@@ -521,18 +521,6 @@ p.description {
     <script src="js/script.js?v=2.1"></script>
 
     <script src="js/sw.js?v=2.1"></script>
-
-     <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('js/sw.js').then((registration) => {
-                    console.log('Service Worker enregistré avec le scope:', registration.scope);
-                }).catch((error) => {
-                    console.log('Échec de l\'enregistrement du Service Worker:', error);
-                });
-            });
-        }
-     </script>
     
  <script>
         // Script pour le filtrage des produits
