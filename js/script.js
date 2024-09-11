@@ -63,7 +63,7 @@ function redirectToAffiliation(affiliationLink) {
     window.location.href = affiliationLink;
 }
 
-// Ajoutez cet événement au clic des boutons "Acheter maintenant"
+// Utilisation de la même variable 'buyButtons' sans la redéclarer
 const buyButtons = document.querySelectorAll('.btn');
 buyButtons.forEach(button => {
     button.addEventListener('click', () => {
