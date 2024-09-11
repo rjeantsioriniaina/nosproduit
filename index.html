@@ -521,57 +521,76 @@ p.description {
     <script src="js/script.js?v=2.2"></script>
 
     <script src="js/sw.js?v=2.2"></script>
-    
- <script>
-        // Script pour le filtrage des produits
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const products = document.querySelectorAll('.product');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const category = button.getAttribute('data-category');
-                
-                products.forEach(product => {
-                    if (category === 'all' || product.getAttribute('data-category') === category) {
-                        product.style.display = 'block';
-                    } else {
-                        product.style.display = 'none';
-                    }
+    <!-- Code JavaScript intégré directement -->
+    <script>
+        // Vérification du support Service Worker par le navigateur
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('js/sw.js').then((registration) => {
+                    console.log('Service Worker registered with scope:', registration.scope);
+                }).catch((error) => {
+                    console.log('Service Worker registration failed:', error);
                 });
             });
+        } else {
+            console.log("Service Worker non supporté par le navigateur.");
+        }
+
+        // Exemple d'une fonction simple
+        function afficherMessage() {
+            console.log("Script JS chargé et fonctionnel.");
+        }
+
+        // Appel de la fonction après le chargement de la page
+        window.addEventListener('DOMContentLoaded', (event) => {
+            afficherMessage();
         });
 
-        // Script pour le compte à rebours
+        // Fonction pour démarrer le compte à rebours
         function startCountdown(duration, display) {
             let timer = duration, minutes, seconds;
             setInterval(() => {
                 minutes = parseInt(timer / 60, 10);
                 seconds = parseInt(timer % 60, 10);
 
+                // Ajoute un zéro devant les minutes et les secondes si nécessaire
                 minutes = minutes < 10 ? "0" + minutes : minutes;
                 seconds = seconds < 10 ? "0" + seconds : seconds;
 
+                // Affiche le temps sous format MM:SS
                 display.textContent = minutes + ":" + seconds;
 
+                // Réinitialise le compteur lorsque le temps est écoulé
                 if (--timer < 0) {
                     timer = duration;
                 }
             }, 1000);
         }
 
-        window.onload = function () {
-            const countdownDuration = 60 * 30; // 30 minutes countdown
-            const display = document.querySelector('#countdown-timer');
-            startCountdown(countdownDuration, display);
+        // Démarre le compte à rebours lorsque la fenêtre est complètement chargée
+        window.onload = function() {
+            const countdownElement = document.querySelector("#countdown-timer");
+            if (countdownElement) {
+                // Démarre le compte à rebours de 30 minutes (1800 secondes)
+                startCountdown(1800, countdownElement);
+            }
         };
+
+        // Ajoute un événement de clic à tous les boutons avec la classe 'btn'
+        document.querySelectorAll(".btn").forEach(function(button) {
+            button.addEventListener("click", function() {
+                alert("Vous allez être redirigé vers la page d'achat.");
+            });
+        });
 
         // Script de redirection automatique avec lien d'affiliation spécifique
         function redirectToAffiliation(affiliationLink) {
             window.location.href = affiliationLink;
         }
 
-        // Ajoutez cet événement au clic des boutons "Acheter maintenant"
-        const buyButtons = document.querySelectorAll('.btn');
+        // Suppression de la redéclaration de 'buyButtons'
+        let buyButtons = document.querySelectorAll('.btn');
         buyButtons.forEach(button => {
             button.addEventListener('click', () => {
                 const affiliationLink = button.getAttribute('data-affiliation');
