@@ -118,16 +118,28 @@ footer a.text-white:hover {
     text-decoration: underline; /* Souligner au survol */
 }
 
-    /* Styles pour les en-têtes */
+    /* Ajout de l'image en arrière-plan pour l'ensemble de la page */
+body {
+    background-image: url('URL_DE_VOTRE_IMAGE'); /* Remplacez par l'URL de votre image */
+    background-size: cover; /* L'image couvre toute la page */
+    background-repeat: no-repeat; /* Pas de répétition de l'image */
+    background-position: center center; /* Centrer l'image */
+    margin: 0;
+    padding: 0;
+}
+
+/* Styles pour les en-têtes */
 h1 {
     font-size: 36px;
     margin-top: 20px;
     font-weight: bold;
     color: #007BFF; /* Couleur bleue pour un effet attractif */
-    background-color: #f8f9fa; /* Couleur de fond professionnelle (gris clair) */
+    background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle (gris clair) avec transparence */
     padding: 10px; /* Ajout de padding pour espacer le texte du bord */
     text-align: center; /* Centrer le texte */
     border-radius: 5px; /* Coins légèrement arrondis */
+    max-width: 800px; /* Limite la largeur pour un aspect plus élégant */
+    margin: 20px auto; /* Centrer horizontalement l'élément */
 }
 
 /* Styles pour les paragraphes */
@@ -136,7 +148,7 @@ p.description {
     color: #333333; /* Texte gris foncé pour un bon contraste */
     margin: 20px auto;
     max-width: 800px;
-    background-color: #f8f9fa; /* Couleur de fond professionnelle (gris clair) */
+    background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle (gris clair) avec transparence */
     padding: 15px; /* Ajout de padding pour espacer le texte du bord */
     text-align: center; /* Centrer le texte */
     border-radius: 5px; /* Coins légèrement arrondis */
