@@ -73,37 +73,29 @@ footer a.text-white:hover {
     text-decoration: underline; /* Souligner au survol */
 }
 
-    /* Styles pour la section avec image de fond */
-        .header-section {
-            background-image: url('https://raw.githubusercontent.com/rjeantsioriniaina/nosproduit/main/images/arriere%20plan.webp');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            padding: 20px;
-            text-align: center;
-            color: #fff; /* Texte blanc pour contraster avec l'image */
-        }
+     /* Styles pour les en-têtes */
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #007BFF; /* Couleur bleue pour un effet attractif */
+    background-color: #f8f9fa; /* Couleur de fond professionnelle (gris clair) */
+    padding: 10px; /* Ajout de padding pour espacer le texte du bord */
+    text-align: center; /* Centrer le texte */
+    border-radius: 5px; /* Coins légèrement arrondis */
+}
 
-        /* Styles pour le titre */
-        .header-section h1 {
-            font-size: 36px;
-            font-weight: bold;
-            color: #007BFF; /* Couleur bleue pour un effet attractif */
-            background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
-            padding: 10px;
-            border-radius: 5px;
-        }
-
-        /* Styles pour la description */
-        .header-section p.description {
-            font-size: 18px;
-            color: #333333; /* Texte gris foncé */
-            margin: 20px auto;
-            max-width: 800px;
-            background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
-            padding: 15px;
-            border-radius: 5px;
-        }
+/* Styles pour les paragraphes */
+p.description {
+    font-size: 18px;
+    color: #333333; /* Texte gris foncé pour un bon contraste */
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #f8f9fa; /* Couleur de fond professionnelle (gris clair) */
+    padding: 15px; /* Ajout de padding pour espacer le texte du bord */
+    text-align: center; /* Centrer le texte */
+    border-radius: 5px; /* Coins légèrement arrondis */
+}
 
     /* Style pour les témoignages */
     .testimony {
