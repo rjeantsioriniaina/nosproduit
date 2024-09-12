@@ -39,47 +39,26 @@ document.querySelectorAll('.btn').forEach(button => {
     });
 });
 
-// Redirection automatique en fonction des boutons de filtre
-document.querySelectorAll('.filter-btn').forEach(button => {
-    button.addEventListener('click', (event) => {
-        event.preventDefault(); // Empêche le comportement par défaut du bouton
-        const category = button.getAttribute('data-category');
-        
-        // Redirection vers des pages spécifiques en fonction de la catégorie
-        switch(category) {
-            case "PROFESSIONELS":
-                window.location.href = "page_professionels.html"; // Rediriger vers la page des professionnels
-                break;
-            case "SANTE-BEAUTE-NATURE":
-                window.location.href = "page_sante_beaute.html"; // Rediriger vers la page santé et beauté
-                break;
-            case "MAISON":
-                window.location.href = "page_maison.html"; // Rediriger vers la page maison
-                break;
-            case "INFORMATIQUE":
-                window.location.href = "page_informatique.html"; // Rediriger vers la page informatique
-                break;
-            case "INTERNET":
-                window.location.href = "page_internet.html"; // Rediriger vers la page internet
-                break;
-            case "ARGENT - TRAVAIL":
-                window.location.href = "page_argent_travail.html"; // Rediriger vers la page argent-travail
-                break;
-            case "JEUX DIVERTISSEMENT":
-                window.location.href = "page_jeux_divertissement.html"; // Rediriger vers la page jeux et divertissement
-                break;
-            case "CULTURE":
-                window.location.href = "page_culture.html"; // Rediriger vers la page culture
-                break;
-            case "ACHAT SHOPPING":
-                window.location.href = "page_achat_shopping.html"; // Rediriger vers la page achat-shopping
-                break;
-            default:
-                window.location.href = "page_all.html"; // Par défaut, rediriger vers la page "Tous"
-                break;
-        }
-    });
-});
+ </script>
+    
+ <script>
+        // Script pour le filtrage des produits
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const products = document.querySelectorAll('.product');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const category = button.getAttribute('data-category');
+                
+                products.forEach(product => {
+                    if (category === 'all' || product.getAttribute('data-category') === category) {
+                        product.style.display = 'block';
+                    } else {
+                        product.style.display = 'none';
+                    }
+                });
+            });
+        });
 
 // Démarrer un compte à rebours si nécessaire
 window.onload = function() {
