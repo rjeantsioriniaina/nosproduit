@@ -73,62 +73,37 @@ footer a.text-white:hover {
     text-decoration: underline; /* Souligner au survol */
 }
 
-    .header {
-    background-image: url('.header {
-    background-image: url('https://raw.githubusercontent.com/rjeantsioriniaina/nosproduit/main/images/arriere%20plan.webp');
-    background-size: cover; /* Ajuste l'image pour couvrir l'ensemble de la section */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat; /* Évite la répétition de l'image */
-    padding: 20px; /* Espace autour du contenu */
-    text-align: center; /* Centre le texte */
-}
+    /* Styles pour la section avec image de fond */
+        .header-section {
+            background-image: url('https://raw.githubusercontent.com/rjeantsioriniaina/nosproduit/main/images/arriere%20plan.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            padding: 20px;
+            text-align: center;
+            color: #fff; /* Texte blanc pour contraster avec l'image */
+        }
 
-h1 {
-    font-size: 36px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #007BFF; /* Couleur bleue pour un effet attractif */
-    background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
-    padding: 10px;
-    border-radius: 5px;
-}
+        /* Styles pour le titre */
+        .header-section h1 {
+            font-size: 36px;
+            font-weight: bold;
+            color: #007BFF; /* Couleur bleue pour un effet attractif */
+            background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
+            padding: 10px;
+            border-radius: 5px;
+        }
 
-p.description {
-    font-size: 18px;
-    color: #333333; /* Texte gris foncé */
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
-    padding: 15px;
-    border-radius: 5px;
-}
-');
-    background-size: cover; /* Ajuste l'image pour couvrir l'ensemble de la section */
-    background-position: center; /* Centre l'image */
-    background-repeat: no-repeat; /* Évite la répétition de l'image */
-    padding: 20px; /* Espace autour du contenu */
-    text-align: center; /* Centre le texte */
-}
-
-h1 {
-    font-size: 36px;
-    margin-top: 20px;
-    font-weight: bold;
-    color: #007BFF; /* Couleur bleue pour un effet attractif */
-    background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
-    padding: 10px;
-    border-radius: 5px;
-}
-
-p.description {
-    font-size: 18px;
-    color: #333333; /* Texte gris foncé */
-    margin: 20px auto;
-    max-width: 800px;
-    background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
-    padding: 15px;
-    border-radius: 5px;
-}
+        /* Styles pour la description */
+        .header-section p.description {
+            font-size: 18px;
+            color: #333333; /* Texte gris foncé */
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
+            padding: 15px;
+            border-radius: 5px;
+        }
 
     /* Style pour les témoignages */
     .testimony {
