@@ -74,7 +74,35 @@ footer a.text-white:hover {
 }
 
     .header {
+    background-image: url('.header {
     background-image: url('https://raw.githubusercontent.com/USERNAME/REPOSITORY/BRANCH/chemin/vers/image.png');
+    background-size: cover; /* Ajuste l'image pour couvrir l'ensemble de la section */
+    background-position: center; /* Centre l'image */
+    background-repeat: no-repeat; /* Évite la répétition de l'image */
+    padding: 20px; /* Espace autour du contenu */
+    text-align: center; /* Centre le texte */
+}
+
+h1 {
+    font-size: 36px;
+    margin-top: 20px;
+    font-weight: bold;
+    color: #007BFF; /* Couleur bleue pour un effet attractif */
+    background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
+    padding: 10px;
+    border-radius: 5px;
+}
+
+p.description {
+    font-size: 18px;
+    color: #333333; /* Texte gris foncé */
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: rgba(248, 249, 250, 0.8); /* Couleur de fond professionnelle avec transparence */
+    padding: 15px;
+    border-radius: 5px;
+}
+');
     background-size: cover; /* Ajuste l'image pour couvrir l'ensemble de la section */
     background-position: center; /* Centre l'image */
     background-repeat: no-repeat; /* Évite la répétition de l'image */
