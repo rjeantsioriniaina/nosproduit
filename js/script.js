@@ -59,8 +59,7 @@ document.querySelectorAll('.btn').forEach(button => {
                 });
             });
         });
-
-
+        
         // Script pour le compte à rebours
         function startCountdown(duration, display) {
             let timer = duration, minutes, seconds;
