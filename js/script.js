@@ -60,11 +60,27 @@ document.querySelectorAll('.btn').forEach(button => {
             });
         });
 
-// Démarrer un compte à rebours si nécessaire
-window.onload = function() {
-    const countdownElement = document.querySelector('#countdown-timer');
-    if (countdownElement) {
-        // Démarre le compte à rebours de 30 minutes (1800 secondes)
-        startCountdown(1800, countdownElement);
-    }
-};
+
+        // Script pour le compte à rebours
+        function startCountdown(duration, display) {
+            let timer = duration, minutes, seconds;
+            setInterval(() => {
+                minutes = parseInt(timer / 60, 10);
+                seconds = parseInt(timer % 60, 10);
+
+                minutes = minutes < 10 ? "0" + minutes : minutes;
+                seconds = seconds < 10 ? "0" + seconds : seconds;
+
+                display.textContent = minutes + ":" + seconds;
+
+                if (--timer < 0) {
+                    timer = duration;
+                }
+            }, 1000);
+        }
+
+        window.onload = function () {
+            const countdownDuration = 60 * 30; // 30 minutes countdown
+            const display = document.querySelector('#countdown-timer');
+            startCountdown(countdownDuration, display);
+        };
