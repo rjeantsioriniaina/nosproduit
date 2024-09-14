@@ -1,0 +1,11 @@
+{
+  "name": "affiliation-site",
+  "version": "1.0.0",
+  "description": "Site d'affiliation avec HTML, CSS, et JavaScript",
+  "main": "index.html",
+  "scripts": {
+    "build": "mkdir -p public && cp -r * public/ && rm -rf public/.git && rm -rf public/node_modules"
+  },
+  "author": "Jean",
+  "license": "ISC"
+}
