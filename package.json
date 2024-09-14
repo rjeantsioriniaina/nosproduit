@@ -4,8 +4,13 @@
   "description": "Site d'affiliation avec HTML, CSS, et JavaScript",
   "main": "index.html",
   "scripts": {
-    "build": "mkdir -p public && cp -r * public/"
+    "build": "mkdir -p public && cp -r index.html css/ js/ public/",
+    "start": "serve -s public"
   },
   "author": "Jean",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "serve": "^14.0.1",
+    "lighthouse": "^9.6.0"
+  }
 }
