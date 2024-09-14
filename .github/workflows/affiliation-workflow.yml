@@ -21,6 +21,12 @@ jobs:
     - name: Install dependencies
       run: npm install
 
+    - name: Debugging - Check Node.js version
+      run: node -v
+
+    - name: Debugging - Check npm version
+      run: npm -v
+
     - name: Build the site
       run: npm run build
 
