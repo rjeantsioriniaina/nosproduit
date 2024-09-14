@@ -1,16 +1,13 @@
 {
   "name": "affiliation-site",
   "version": "1.0.0",
-  "description": "Site d'affiliation avec HTML, CSS, et JavaScript",
-  "main": "index.html",
+  "description": "Site d'affiliation avec tests SEO",
   "scripts": {
-    "build": "mkdir -p public && cp -r index.html css/ js/ public/",
-    "start": "serve -s public"
+    "build": "echo 'No build process for static site'", // Adapté pour un site statique sans processus de build
+    "test:seo": "lighthouse https://rjeantsioriniaina.github.io/nosproduit/ --quiet --chrome-flags='--headless' --only-categories=seo --output=json --output-path=./lighthouse-report.json"
   },
-  "author": "Jean",
-  "license": "ISC",
   "dependencies": {
-    "serve": "^14.0.1",
-    "lighthouse": "^9.6.0"
-  }
+    "lighthouse": "^10.0.0" // Assure-toi que la version est compatible
+  },
+  "devDependencies": {}
 }
