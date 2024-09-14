@@ -23,6 +23,11 @@ jobs:
         with:
           node-version: '20'
 
+      # Installation des dépendances
+      - name: Install dependencies
+        run: |
+          npm install
+
       # Étape de build (ajuste ou enlève cette étape si non applicable)
       - name: Build the website
         run: |
@@ -31,8 +36,7 @@ jobs:
       # Test SEO avec Lighthouse
       - name: Run Lighthouse SEO checks
         run: |
-          npm install -g lighthouse
-          lighthouse https://rjeantsioriniaina.github.io/nosproduit/ --quiet --chrome-flags="--headless" --only-categories=seo --output=json --output-path=./lighthouse-report.json
+          npm run test:seo
         continue-on-error: true
 
       # Déploiement sur GitHub Pages depuis la branche `main`
