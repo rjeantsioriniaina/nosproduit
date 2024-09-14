@@ -17,21 +17,21 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Configuration de Node.js (version 20 pour les actions)
+      # Configuration de Node.js pour utiliser la version 20
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '20'  # Utilisation de Node.js version 20
 
       # Installation des dépendances
       - name: Install dependencies
         run: |
           npm install
 
-      # Étape de build (ajuste ou enlève cette étape si non applicable)
+      # Étape de build (si nécessaire, sinon l'ignorer)
       - name: Build the website
         run: |
-          echo "No build process for static site" # Remplace par ton script de build si nécessaire
+          echo "No build process for static site"
 
       # Test SEO avec Lighthouse
       - name: Run Lighthouse SEO checks
@@ -39,14 +39,14 @@ jobs:
           npm run test:seo
         continue-on-error: true
 
-      # Déploiement sur GitHub Pages depuis la branche `main`
+      # Déploiement sur GitHub Pages depuis la branche `gh-pages`
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # Branche de déploiement
-          folder: .  # Dossier contenant les fichiers à déployer
+          branch: gh-pages
+          folder: .
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Token GitHub pour les autorisations
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       # Vérification après déploiement
       - name: Verify deployment
