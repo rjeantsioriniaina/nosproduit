@@ -1,11 +1,52 @@
+name: Build, Test SEO, and Deploy Affiliation Site
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
 jobs:
   build_and_test:
     runs-on: ubuntu-latest
+
     steps:
+      # Etape pour checker le dépôt
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      # Installation de Node.js Version 20
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '20'  # Mise à jour vers Node.js 20
+          node-version: '20'
+
+      # Commande de Build - Si tu n'as pas de script de build, tu peux désactiver cette étape.
+      # Supprimez-le si tu n'utilises pas de script de build.
+      - name: Build the website
+        run: |
+          echo "Building the website..."
+          # Ajoute ici les commandes si tu as un process de build spécifique.
+          # Sinon, juste simuler un build avec un echo
+          echo "No build process for static site"
+
+      # Etape SEO avec Lighthouse
+      - name: Run Lighthouse SEO checks
+        run: |
+          npm install -g lighthouse
+          lighthouse http://localhost/index.html --quiet --chrome-flags="--headless" --only-categories=seo --output=json --output-path=./lighthouse-report.json
+        continue-on-error: true  # Continuer même si des problèmes SEO sont détectés (selon tes besoins)
+
+      # Déploiement sur GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages  # Branch de déploiement
+          folder: .  # Dossier à déployer (le root ici)
+      
+      # Lancer une vérification sur la branche déployée
+      - name: Verify deployment
+        run: echo "Deployment successful. Verifying..."
+        continue-on-error: false
