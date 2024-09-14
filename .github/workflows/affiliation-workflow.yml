@@ -13,40 +13,38 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Etape pour checker le dépôt
+      # Checkout du code
       - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Installation de Node.js Version 20
+      # Configuration de Node.js (version 20 pour les actions)
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '20'
 
-      # Commande de Build - Si tu n'as pas de script de build, tu peux désactiver cette étape.
-      # Supprimez-le si tu n'utilises pas de script de build.
+      # Étape de build (ajuste ou enlève cette étape si non applicable)
       - name: Build the website
         run: |
-          echo "Building the website..."
-          # Ajoute ici les commandes si tu as un process de build spécifique.
-          # Sinon, juste simuler un build avec un echo
-          echo "No build process for static site"
+          echo "No build process for static site" # Remplace par ton script de build si nécessaire
 
-      # Etape SEO avec Lighthouse
+      # Test SEO avec Lighthouse
       - name: Run Lighthouse SEO checks
         run: |
           npm install -g lighthouse
-          lighthouse http://localhost/index.html --quiet --chrome-flags="--headless" --only-categories=seo --output=json --output-path=./lighthouse-report.json
-        continue-on-error: true  # Continuer même si des problèmes SEO sont détectés (selon tes besoins)
+          lighthouse https://rjeantsioriniaina.github.io/nosproduit/ --quiet --chrome-flags="--headless" --only-categories=seo --output=json --output-path=./lighthouse-report.json
+        continue-on-error: true
 
-      # Déploiement sur GitHub Pages
+      # Déploiement sur GitHub Pages depuis la branche `main`
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          branch: gh-pages  # Branch de déploiement
-          folder: .  # Dossier à déployer (le root ici)
-      
-      # Lancer une vérification sur la branche déployée
+          branch: gh-pages  # Branche de déploiement
+          folder: .  # Dossier contenant les fichiers à déployer
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Token GitHub pour les autorisations
+
+      # Vérification après déploiement
       - name: Verify deployment
         run: echo "Deployment successful. Verifying..."
         continue-on-error: false
