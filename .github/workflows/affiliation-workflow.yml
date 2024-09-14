@@ -16,7 +16,7 @@ jobs:
     - name: Set up Node.js
       uses: actions/setup-node@v3
       with:
-        node-version: '16'
+        node-version: '20'
 
     - name: Install dependencies
       run: npm install
@@ -25,7 +25,9 @@ jobs:
       run: npm run build
 
     - name: Serve the site locally
-      run: npm start &
+      run: |
+        npm install -g serve
+        serve -s public &
         sleep 5
 
     - name: Run Lighthouse for SEO Audit
