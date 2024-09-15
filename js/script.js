@@ -39,52 +39,49 @@ document.querySelectorAll('.btn').forEach(button => {
     });
 });
 
- </script>
-    
- <script>
-        // Script pour le filtrage des produits
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        const products = document.querySelectorAll('.product');
+// Script pour le filtrage des produits
+const filterButtons = document.querySelectorAll('.filter-btn');
+const products = document.querySelectorAll('.product');
 
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const category = button.getAttribute('data-category');
-                
-                products.forEach(product => {
-                    if (category === 'all' || product.getAttribute('data-category') === category) {
-                        product.style.display = 'block';
-                    } else {
-                        product.style.display = 'none';
-                    }
-                });
-            });
+filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const category = button.getAttribute('data-category');
+
+        products.forEach(product => {
+            if (category === 'all' || product.getAttribute('data-category') === category) {
+                product.style.display = 'block';
+            } else {
+                product.style.display = 'none';
+            }
         });
-        
-        // Script pour le compte à rebours
-        function startCountdown(duration, display) {
-            let timer = duration, minutes, seconds;
-            setInterval(() => {
-                minutes = parseInt(timer / 60, 10);
-                seconds = parseInt(timer % 60, 10);
+    });
+});
 
-                minutes = minutes < 10 ? "0" + minutes : minutes;
-                seconds = seconds < 10 ? "0" + seconds : seconds;
+// Script pour le compte à rebours
+function startCountdown(duration, display) {
+    let timer = duration, minutes, seconds;
+    setInterval(() => {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
 
-                display.textContent = minutes + ":" + seconds;
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
 
-                if (--timer < 0) {
-                    timer = duration;
-                }
-            }, 1000);
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
         }
+    }, 1000);
+}
 
-        window.onload = function () {
-            const countdownDuration = 60 * 30; // 30 minutes countdown
-            const display = document.querySelector('#countdown-timer');
-            startCountdown(countdownDuration, display);
-        };
+window.onload = function () {
+    const countdownDuration = 60 * 30; // 30 minutes countdown
+    const display = document.querySelector('#countdown-timer');
+    startCountdown(countdownDuration, display);
+};
 
-  // JavaScript pour redirection après soumission
+// JavaScript pour redirection après soumission
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('emailForm');
     if (form) {
