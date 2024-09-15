@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://rjeantsioriniaina.github.io/nosproduit/</loc>  <!-- Remplacer cette URL par l'URL de ton site -->
+        <lastmod>2024-09-14</lastmod>  <!-- Date de la dernière modification de la page -->
+        <changefreq>monthly</changefreq>  <!-- Fréquence de mise à jour -->
+        <priority>1.0</priority>  <!-- Priorité de la page -->
+    </url>
+    <url>
+        <loc>https://rjeantsioriniaina.github.io/nosproduit/contact.html</loc>  <!-- Remplacer cette URL par une autre page importante de ton site -->
+        <lastmod>2024-09-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <!-- Ajoute d'autres pages si nécessaire -->
+</urlset>
