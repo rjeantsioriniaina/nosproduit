@@ -242,7 +242,22 @@ p.description {
     <!-- Titre et description de la page -->
     <h1>Découvrez nos Offres Exclusives : Produits & Services à la Pointe de l'Innovation</h1>
     <p class="description">Bienvenue sur notre site où nous mettons à votre disposition une sélection unique de produits et services conçus pour répondre à vos besoins. Que vous soyez à la recherche de gadgets technologiques, d'outils professionnels ou de services de qualité, nous avons ce qu'il vous faut. Profitez de nos offres exclusives et bénéficiez de recommandations personnalisées pour un shopping intelligent et efficace. Ne ratez pas nos promotions spéciales et nos avis clients pour des achats en toute confiance.</p>
-    
+
+    <!-- Formulaire de capture d'e-mail -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4">Inscrivez-vous à notre newsletter</h2>
+        <form action="https://formspree.io/f/xblrezwl" method="POST">
+            <div class="mb-3">
+                <label for="email" class="form-label">Votre e-mail :</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+            <div class="form-check mb-3">
+                <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
+                <label for="consent" class="form-check-label">Je consens à recevoir des e-mails de votre part.</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">S'abonner</button>
+        </form>
+      </div>
     <!-- Filtre de catégories -->
     <div id="filters">
     <button class="filter-btn" data-category="All"><i class="fas fa-th"></i> TOUS</button>
