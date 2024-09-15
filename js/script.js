@@ -40,7 +40,7 @@ document.querySelectorAll('.btn').forEach(button => {
 });
 
 // Script pour le filtrage des produits
-const filterButtons = document.querySelectorAll('.filter-btn');
+const filterButtons = document.querySelectorAll('.filter-btn');  // Déclaré une seule fois
 const products = document.querySelectorAll('.product');
 
 filterButtons.forEach(button => {
