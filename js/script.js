@@ -84,3 +84,25 @@ document.querySelectorAll('.btn').forEach(button => {
             startCountdown(countdownDuration, display);
         };
 
+  <!-- JavaScript pour redirection après soumission -->
+    <script>
+        document.getElementById('emailForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var form = event.target;
+            fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(function(response) {
+                if (response.ok) {
+                    window.location.href = '/nosproduit/inscrivez-vous-newsletter.html';
+                } else {
+                    alert('Erreur lors de la soumission du formulaire.');
+                }
+            }).catch(function(error) {
+                alert('Erreur lors de la soumission du formulaire.');
+            });
+        });
+    </script>
