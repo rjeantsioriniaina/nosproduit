@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Formulaire</title>
+</head>
+<body>
+    <!-- Formulaire de capture d'e-mail -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Inscrivez-vous à notre newsletter</h2>
+    <form action="https://formspree.io/f/xblrezwl" method="POST">
+        <div class="mb-3">
+            <label for="email" class="form-label">Votre e-mail :</label>
+            <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
+            <label for="consent" class="form-check-label">Je consens à recevoir des e-mails de votre part.</label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">S'abonner</button>
+    </form>
+</div>
+</body>
+</html>
