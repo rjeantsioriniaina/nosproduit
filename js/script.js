@@ -83,3 +83,27 @@ document.querySelectorAll('.btn').forEach(button => {
             const display = document.querySelector('#countdown-timer');
             startCountdown(countdownDuration, display);
         };
+
+<script>
+    document.getElementById('newsletterForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const form = e.target;
+        const formData = new FormData(form);
+
+        fetch(form.action, {
+            method: form.method,
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        }).then(response => {
+            if (response.ok) {
+                window.location.href = 'merci.html';
+            } else {
+                alert('Erreur lors de la soumission du formulaire.');
+            }
+        }).catch(error => {
+            alert('Erreur de connexion. Veuillez réessayer.');
+        });
+    });
+</script>
