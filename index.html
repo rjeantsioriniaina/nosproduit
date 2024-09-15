@@ -718,24 +718,23 @@ p.description {
 </section>
 
         <!-- Formulaire de capture d'e-mail -->
-        <div class="container mt-5">
-            <h2 class="text-center mb-4">Inscrivez-vous à notre newsletter</h2>
-            <form action="https://formspree.io/f/movazkzr" method="POST">
-                <div class="mb-3">
-                    <label for="email" class="form-label">Votre e-mail :</label>
-                    <input type="email" id="email" name="email" class="form-control" required>
-                </div>
-                <div class="form-check mb-3">
-                    <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
-                    <label for="consent" class="form-check-label">Je consens à recevoir des e-mails de votre part.</label>
-                </div>
-                <button type="submit" class="btn btn-primary w-100">S'abonner</button>
-            </form>
+<div class="container mt-5">
+    <h2 class="text-center mb-4">Inscrivez-vous à notre newsletter</h2>
+    <form action="https://formspree.io/f/movazkzr" method="POST" onsubmit="alert('Merci pour votre inscription !');">
+        <div class="mb-3">
+            <label for="email" class="form-label">Votre e-mail :</label>
+            <input type="email" id="email" name="email" class="form-control" required>
         </div>
-    </div>
-    
-    <!-- Bootstrap JavaScript via unpkg -->
-    <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <div class="form-check mb-3">
+            <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
+            <label for="consent" class="form-check-label">Je consens à recevoir des e-mails de votre part.</label>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">S'abonner</button>
+    </form>
+</div>
+
+<!-- Bootstrap JavaScript via unpkg -->
+<script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Section Témoignages -->        
     <section id="testimonials">
