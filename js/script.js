@@ -84,11 +84,12 @@ document.querySelectorAll('.btn').forEach(button => {
             startCountdown(countdownDuration, display);
         };
 
-  <!-- JavaScript pour redirection après soumission -->
-    <script>
-        document.getElementById('emailForm').addEventListener('submit', function(event) {
+  // JavaScript pour redirection après soumission
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('emailForm');
+    if (form) {
+        form.addEventListener('submit', function(event) {
             event.preventDefault();
-            var form = event.target;
             fetch(form.action, {
                 method: 'POST',
                 body: new FormData(form),
@@ -105,4 +106,5 @@ document.querySelectorAll('.btn').forEach(button => {
                 alert('Erreur lors de la soumission du formulaire.');
             });
         });
-    </script>
+    }
+});
