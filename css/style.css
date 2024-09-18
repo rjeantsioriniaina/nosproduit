@@ -170,13 +170,6 @@ p.description {
     }
 
 /* Style de la navigation */
-header {
-    background-color: #4A4A4A; /* Gris foncé moderne */
-    color: #fff;
-    padding: 10px 20px;
-}
-
-
 nav {
     display: flex;
     justify-content: center;
