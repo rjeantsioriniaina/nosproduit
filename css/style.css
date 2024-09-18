@@ -191,7 +191,9 @@ nav {
     background-color: #007BFF;
     padding: 10px 15px;
     border-radius: 5px;
-    }
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
 .nav-menu li {
     margin: 5px;
 }
