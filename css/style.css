@@ -191,6 +191,19 @@ blockquote cite {
     font-size: 0.9em;
 }
 
+/* style.css */
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+footer p {
+    margin: 0;
+}
+
     /* Style du container de témoignages */
     #testimonials {
         background-color: #f0f0f0;
