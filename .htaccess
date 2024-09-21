@@ -1,0 +1,6 @@
+# Autres configurations possibles
+
+# Configuration du type de contenu pour les fichiers XML
+AddType application/xml .xml
+
+# Autres configurations possibles
