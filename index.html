@@ -36,6 +36,45 @@
       gtag('config', 'G-XXXXXXXXXX');
     </script>
 
+    <!-- JSON-LD pour le produit -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "Nom du Produit",
+      "image": "URL de l'image du produit",
+      "description": "Description du produit",
+      "sku": "Code SKU du produit",
+      "offers": {
+        "@type": "Offer",
+        "url": "URL de la page du produit",
+        "priceCurrency": "EUR",
+        "price": "Prix du produit",
+        "availability": "https://schema.org/InStock"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.5",
+        "reviewCount": "24"
+      },
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Nom de l'auteur"
+          },
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Ceci est un avis sur le produit."
+        }
+      ]
+    }
+    </script>
+
     <style>
     /* Style général pour les boutons */
     .btn {
