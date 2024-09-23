@@ -329,17 +329,28 @@ p.description {
 
     <main>
     <!-- Produit Trading -->
-    <section class="product" data-category="ARGENT - TRAVAIL">
-        <h2>Formation complète en ligne au TRADING</h2>
-        <img src="images/image-produit1.webp?v=1.0" alt="Formation complète en ligne au TRADING - Version 1.0" class="responsive-img" width="800" height="600">
+<section class="product" data-category="ARGENT - TRAVAIL" itemscope itemtype="http://schema.org/Product">
+    <h2 itemprop="name">Formation complète en ligne au TRADING</h2>
+    <img src="images/image-produit1.webp?v=1.0" alt="Formation complète en ligne au TRADING - Version 1.0" class="responsive-img" width="800" height="600" itemprop="image">
 
-        <p>INFINITY : Formation accélérée aux outils et méthodes professionnels : Carnet d'ordres ; Analyse fondamentale ; Analyse technique ; Market Profile ; Psychologie & MoneyManagement ; Plateforme de Trading.</p>
-        <a href="https://1tpe.net/goto.php?dat=jeanr_swissta_1&tk=" class="btn">RESERVER MAINTENANT</a>
+    <p itemprop="description">INFINITY : Formation accélérée aux outils et méthodes professionnels : Carnet d'ordres ; Analyse fondamentale ; Analyse technique ; Market Profile ; Psychologie & MoneyManagement ; Plateforme de Trading.</p>
+    <a href="https://1tpe.net/goto.php?dat=jeanr_swissta_1&tk=" class="btn" itemprop="url">RESERVER MAINTENANT</a>
 
-        <!-- SEO pour le produit "Formation complète en ligne au TRADING" -->
-        <meta name="description" content="Découvrez la formation complète en ligne au trading. Apprenez les outils professionnels comme le Carnet d'ordres, l'Analyse technique, et le Money Management pour devenir un expert.">
-        <meta name="keywords" content="formation trading, trading en ligne, carnet d'ordres, analyse technique, money management, trading professionnel, plateforme de trading">
-    </section>
+    <!-- SEO pour le produit "Formation complète en ligne au TRADING" -->
+    <meta name="description" content="Découvrez la formation complète en ligne au trading. Apprenez les outils professionnels comme le Carnet d'ordres, l'Analyse technique, et le Money Management pour devenir un expert.">
+    <meta name="keywords" content="formation trading, trading en ligne, carnet d'ordres, analyse technique, money management, trading professionnel, plateforme de trading">
+
+    <!-- Balises de données structurées -->
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="EUR" />
+        <meta itemprop="price" content="199.99" />
+        <link itemprop="availability" href="http://schema.org/InStock" />
+    </div>
+    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+        <meta itemprop="ratingValue" content="4.5" />
+        <meta itemprop="reviewCount" content="24" />
+    </div>
+</section>
 
         <!-- Section produit pour "Comprendre mon Trading" avec schema.org -->
 <section class="product" data-category="ARGENT - TRAVAIL" itemscope itemtype="https://schema.org/Product">
