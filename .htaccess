@@ -4,3 +4,4 @@
 AddType application/xml .xml
 
 # Autres configurations possibles
+AddType text/html .html
