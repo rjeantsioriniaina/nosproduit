@@ -1,26 +1,3 @@
-// Vérification du support Service Worker par le navigateur
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('js/sw.js').then((registration) => {
-            console.log('Service Worker registered with scope:', registration.scope);
-        }).catch((error) => {
-            console.log('Service Worker registration failed:', error);
-        });
-    });
-} else {
-    console.log("Service Worker non supporté par le navigateur.");
-}
-
-// Fonction simple pour afficher un message de succès de chargement
-function afficherMessage() {
-    console.log("Script JS chargé et fonctionnel.");
-}
-
-// Appel de la fonction après le chargement de la page
-window.addEventListener('DOMContentLoaded', (event) => {
-    afficherMessage();
-});
-
 // Fonction pour rediriger automatiquement vers la page d'achat
 function redirectToAffiliation(link) {
     window.location.href = link;
