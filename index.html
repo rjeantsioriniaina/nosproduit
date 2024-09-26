@@ -2086,34 +2086,7 @@ p.description {
     <!-- Bootstrap JavaScript via unpkg -->
     <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>             
     <!-- Lien vers ton fichier JavaScript -->
-    <script src="js/script.js?v=2.4"></script>
-
-    <script src="js/sw.js?v=2.4"></script>
-
-    <!-- Code JavaScript intégré directement -->
-    <script>
-        // Vérification du support Service Worker par le navigateur
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-        navigator.serviceWorker.register('js/sw.js').then((registration) => {
-            console.log('Service Worker registered with scope:', registration.scope);
-        }).catch((error) => {
-            console.log('Service Worker registration failed:', error);
-        });
-    });
-} else {
-    console.log("Service Worker non supporté par le navigateur.");
-}
-
-// Fonction simple pour afficher un message de succès de chargement
-function afficherMessage() {
-    console.log("Script JS chargé et fonctionnel.");
-}
-
-// Appel de la fonction après le chargement de la page
-window.addEventListener('DOMContentLoaded', (event) => {
-    afficherMessage();
-});
+    <script src="js/script.js?v=2.5"></script>
 
 // Fonction pour rediriger automatiquement vers la page d'achat
 function redirectToAffiliation(link) {
