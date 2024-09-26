@@ -27,58 +27,6 @@
 
 <!-- URL canonique -->
 <link rel="canonical" href="https://rjeantsioriniaina.github.io/nosproduit/" />
-
-<!-- JSON-LD pour le produit -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org/",
-  "@type": "Product",
-  "name": "Nom du Produit",
-  "image": "URL de l'image du produit",
-  "description": "Description du produit",
-  "sku": "Code SKU du produit",
-  "offers": {
-    "@type": "Offer",
-    "url": "URL de la page du produit",
-    "priceCurrency": "EUR",
-    "price": "Prix du produit",
-    "availability": "https://schema.org/InStock",
-    "shippingDetails": {
-      "@type": "OfferShippingDetails",
-      "shippingRate": {
-        "@type": "MonetaryAmount",
-        "currency": "EUR",
-        "value": "4.99"
-      }
-      // Vous pouvez ajouter d'autres détails de livraison ici
-    },
-    "hasMerchantReturnPolicy": {
-      "@type": "MerchantReturnPolicy",
-      // Détails de la politique de retour du marchand
-    }
-  },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.5",
-    "reviewCount": "24"
-  },
-  "review": [
-    {
-      "@type": "Review",
-      "author": {
-        "@type": "Person",
-        "name": "Nom de l'auteur"
-      },
-      "reviewRating": {
-        "@type": "Rating",
-        "ratingValue": "5",
-        "bestRating": "5"
-      },
-      "reviewBody": "Ceci est un avis sur le produit."
-    }
-  ]
-}
-</script>
 </head>
 
 <body>
@@ -134,13 +82,36 @@
     </header>
 
     <main>
-        <!-- Section Produit Trading -->
-        <section class="product" data-category="ARGENT - TRAVAIL">
-            <h2>Formation complète en ligne au TRADING</h2>
-            <img src="../images/image-produit1.webp?v=1.0" alt="Formation complète en ligne au TRADING - Version 1.0" class="responsive-img" width="800" height="600">
-            <p>INFINITY : Formation accélérée aux outils et méthodes professionnels : Carnet d'ordres, Analyse fondamentale, Analyse technique, Market Profile, Psychologie & Money Management, Plateforme de Trading.</p>
-            <a href="https://1tpe.net/goto.php?dat=jeanr_swissta_1&tk=" class="btn">RESERVER MAINTENANT</a>
-        </section>
+        <!-- Produit Trading -->
+<section class="product" data-category="ARGENT - TRAVAIL" itemscope itemtype="http://schema.org/Product">
+    <h2 itemprop="name">Formation complète en ligne au TRADING</h2>
+    <img src="images/image-produit1.webp?v=1.0" alt="Formation complète en ligne au TRADING - Version 1.0" class="responsive-img" width="800" height="600" itemprop="image">
+
+    <p itemprop="description">INFINITY : Formation accélérée aux outils et méthodes professionnels : Carnet d'ordres ; Analyse fondamentale ; Analyse technique ; Market Profile ; Psychologie & MoneyManagement ; Plateforme de Trading.</p>
+    <a href="https://1tpe.net/goto.php?dat=jeanr_swissta_1&tk=" class="btn" itemprop="url">RESERVER MAINTENANT</a>
+    <!-- Balises de données structurées -->
+    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="EUR" />
+        <meta itemprop="price" content="199.99" />
+        <link itemprop="availability" href="http://schema.org/InStock" />
+    </div>
+    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+        <meta itemprop="ratingValue" content="4.5" />
+        <meta itemprop="reviewCount" content="24" />
+          <!-- Ajout du champ hasMerchantReturnPolicy -->
+  <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+    <meta itemprop="returnPolicyCategory" content="https://schema.org/ReturnShippingFees" />
+    <meta itemprop="returnPolicyCountry" content="FR" />
+    <meta itemprop="returnPolicyDays" content="30" />
+  </div>
+  
+  <!-- Ajout du champ shippingDetails -->
+  <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+    <meta itemprop="shippingRate" content="5.99" />
+    <meta itemprop="shippingDestination" content="FR" />
+    <meta itemprop="deliveryTime" content="3-5 jours ouvrables" />
+  </div>
+</section>
 
         <!-- Articles associés -->
         <section class="articles">
