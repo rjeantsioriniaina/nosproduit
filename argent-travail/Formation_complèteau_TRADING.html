@@ -88,28 +88,27 @@
 
     <p itemprop="description">INFINITY : Formation accélérée aux outils et méthodes professionnels : Carnet d'ordres ; Analyse fondamentale ; Analyse technique ; Market Profile ; Psychologie & MoneyManagement ; Plateforme de Trading.</p>
     <a href="https://1tpe.net/goto.php?dat=jeanr_swissta_1&tk=" class="btn" itemprop="url">RESERVER MAINTENANT</a>
-    <!-- Balises de données structurées -->
-    <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
-        <meta itemprop="priceCurrency" content="EUR" />
-        <meta itemprop="price" content="199.99" />
-        <link itemprop="availability" href="http://schema.org/InStock" />
-    </div>
-    <div itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
-        <meta itemprop="ratingValue" content="4.5" />
-        <meta itemprop="reviewCount" content="24" />
-          <!-- Ajout du champ hasMerchantReturnPolicy -->
-  <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+    <!-- Balisage des offres -->
+<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    <meta itemprop="priceCurrency" content="EUR" />
+    <meta itemprop="price" content="199.99" />
+    <link itemprop="availability" href="https://schema.org/InStock" />
+    <meta itemprop="priceValidUntil" content="2024-12-31" /> <!-- Ajoutez cette ligne avec votre date -->
+</div>
+<!-- Ajout du champ hasMerchantReturnPolicy -->
+<div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
     <meta itemprop="returnPolicyCategory" content="https://schema.org/ReturnShippingFees" />
     <meta itemprop="returnPolicyCountry" content="FR" />
     <meta itemprop="returnPolicyDays" content="30" />
-  </div>
-  
-  <!-- Ajout du champ shippingDetails -->
-  <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+</div>
+
+<!-- Ajout du champ shippingDetails -->
+<div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
     <meta itemprop="shippingRate" content="5.99" />
     <meta itemprop="shippingDestination" content="FR" />
     <meta itemprop="deliveryTime" content="3-5 jours ouvrables" />
-  </div>
+</div>
+
 </section>
 
         <!-- Articles associés -->
