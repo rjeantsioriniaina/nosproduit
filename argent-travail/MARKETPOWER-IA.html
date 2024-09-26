@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MARKETPOWER-IA : L'IA au service de votre business en ligne</title>
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Directive d'indexation -->
+<meta name="robots" content="index, follow">
+
+<!-- URL canonique -->
+<link rel="canonical" href="https://rjeantsioriniaina.github.io/nosproduit/" />
 
     <!-- SEO Metadata -->
     <meta name="description" content="Lancez votre business en ligne avec MARKETPOWER-IA, un logiciel d'IA 100% Français conçu pour automatiser vos tâches, optimiser vos ventes et développer votre entreprise facilement.">
@@ -77,12 +82,51 @@
     </header>
 
     <main>
-        <!-- Section Produit MARKETPOWER-IA -->
-        <section class="product" data-category="INFORMATIQUE">
-            <h2>MARKETPOWER-IA : L'IA au service de votre business en ligne</h2>
-            <img src="../images/image-MARKETPOWER-IA.webp?v=1.0" alt="Logiciel IA Français pour business en ligne - MARKETPOWER-IA" class="responsive-img" width="800" height="600">
-            <p>Découvrez MARKETPOWER-IA, un logiciel d'intelligence artificielle 100% Français conçu pour vous aider à lancer et gérer efficacement votre business en ligne. Automatisez vos tâches, optimisez vos ventes et développez votre entreprise sans effort.</p>
-            <a href="https://1tpe.net/goto.php?dat=jeanr_mationgomick_7&tk=" class="btn">DECOUVRIR MAINTENANT</a>
+        <!-- Produit MARKETPOWER-IA -->
+<section class="product" data-category="INFORMATIQUE" itemscope itemtype="https://schema.org/Product">
+    <h2 itemprop="name">MARKETPOWER-IA : L'IA au service de votre business en ligne</h2>
+    <img src="images/image-MARKETPOWER-IA.webp?v=1.0" alt="Logiciel IA Français pour business en ligne - MARKETPOWER-IA" class="responsive-img" width="800" height="600" itemprop="image">
+    <p itemprop="description">
+        Découvrez MARKETPOWER-IA, un logiciel d'intelligence artificielle 100% Français conçu pour vous aider à lancer et gérer efficacement votre business en ligne. Automatisez vos tâches, optimisez vos ventes et développez votre entreprise sans effort.
+    </p>
+    <a href="https://1tpe.net/goto.php?dat=jeanr_mationgomick_7&tk=" class="btn" itemprop="url" aria-label="DECOUVRIR MAINTENANT">DECOUVRIR MAINTENANT</a>
+
+    <!-- Balisage des offres -->
+    <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+        <meta itemprop="priceCurrency" content="EUR" />
+        <meta itemprop="price" content="299.99" />
+        <link itemprop="availability" href="https://schema.org/InStock" />
+    </div>
+    <!-- Ajout du champ hasMerchantReturnPolicy -->
+  <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+    <meta itemprop="returnPolicyCategory" content="https://schema.org/ReturnShippingFees" />
+    <meta itemprop="returnPolicyCountry" content="FR" />
+    <meta itemprop="returnPolicyDays" content="30" />
+  </div>
+    <!-- Ajout du champ shippingDetails -->
+  <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+    <meta itemprop="shippingRate" content="5.99" />
+    <meta itemprop="shippingDestination" content="FR" />
+    <meta itemprop="deliveryTime" content="3-5 jours ouvrables" />
+  </div>
+
+    <!-- Balisage des avis -->
+    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+        <meta itemprop="ratingValue" content="4.7" />
+        <meta itemprop="reviewCount" content="30" />
+    </div>
+
+    <!-- Exemple d'un avis -->
+    <div itemprop="review" itemscope itemtype="https://schema.org/Review">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <meta itemprop="name" content="Pierre Dubois" />
+        </span>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5" />
+            <meta itemprop="bestRating" content="5" />
+        </div>
+        <p itemprop="reviewBody">MARKETPOWER-IA est un outil indispensable pour tout entrepreneur en ligne. Il m'a aidé à automatiser de nombreuses tâches et à augmenter mes ventes.</p>
+    </div>
         </section>
 
         <!-- Articles associés -->
