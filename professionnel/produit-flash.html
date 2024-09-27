@@ -7,6 +7,11 @@
     
     <!-- Lien vers la feuille de style CSS -->
     <link rel="stylesheet" href="../css/style.css">
+    <!-- Directive d'indexation -->
+<meta name="robots" content="index, follow">
+
+<!-- URL canonique -->
+<link rel="canonical" href="https://rjeantsioriniaina.github.io/nosproduit/" />
 
     <!-- SEO Metadata -->
     <meta name="description" content="Créez votre produit en seulement 2 jours et vendez-le plus de 50 euros dès cette semaine avec 'Produit Flash'. Découvrez des stratégies rapides et des astuces efficaces pour lancer et monétiser votre produit rapidement.">
@@ -86,6 +91,46 @@
                 Avec <strong>"Produit Flash"</strong>, apprenez à <strong>créer votre produit en seulement 2 jours</strong> et à <strong>le vendre plus de 50 euros</strong> dès cette semaine ! Ce guide pratique vous fournit des <strong>stratégies rapides</strong> et des <strong>astuces efficaces</strong> pour lancer et monétiser votre produit rapidement. Ne manquez pas cette opportunité de générer des revenus en un temps record.
             </p>
             <a href="https://1tpe.net/goto.php?dat=jeanr_mediaunlike_7&tk=" class="btn" itemprop="url">Démarrez votre produit maintenant</a>
+
+            <!-- Balisage des avis -->
+    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+        <meta itemprop="ratingValue" content="4.6" />
+        <meta itemprop="reviewCount" content="20" />
+    </div>
+
+            <!-- Balisage des offres -->
+<div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+    <meta itemprop="priceCurrency" content="EUR" />
+    <meta itemprop="price" content="59.99" />
+    <link itemprop="availability" href="https://schema.org/InStock" />
+    <meta itemprop="priceValidUntil" content="2024-12-31" /> <!-- Ajoutez cette ligne avec votre date -->
+</div>
+<!-- Ajout du champ hasMerchantReturnPolicy -->
+<div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+    <meta itemprop="returnPolicyCategory" content="https://schema.org/ReturnShippingFees" />
+    <meta itemprop="returnPolicyCountry" content="FR" />
+    <meta itemprop="returnPolicyDays" content="30" />
+</div>
+
+<!-- Ajout du champ shippingDetails -->
+<div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+    <meta itemprop="shippingRate" content="50.99" />
+    <meta itemprop="shippingDestination" content="FR" />
+    <meta itemprop="deliveryTime" content="3-5 jours ouvrables" />
+</div>
+
+    <!-- Exemple d'un avis -->
+    <div itemprop="review" itemscope itemtype="https://schema.org/Review">
+        <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+            <meta itemprop="name" content="Sophie Durand" />
+        </span>
+        <div itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+            <meta itemprop="ratingValue" content="5" />
+            <meta itemprop="bestRating" content="5" />
+        </div>
+        <p itemprop="reviewBody">Produit Flash est incroyable ! J'ai pu créer et vendre mon produit en un temps record. Les astuces sont vraiment efficaces.</p>
+    </div>
+
         </section>
 
         <!-- Témoignages clients -->
