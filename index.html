@@ -2161,29 +2161,7 @@ p.description {
     <script src="https://unpkg.com/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>             
     <!-- Lien vers ton fichier JavaScript -->
     <script src="js/script.js?v=2.5"></script>
-    
-</script>
-});
-// Fonction pour rediriger automatiquement vers la page d'achat
-function redirectToAffiliation(link) {
-    window.location.href = link;
-}
-
-// Ajouter l'événement de clic aux liens avec la classe 'btn'
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', (event) => {
-        event.preventDefault(); // Empêche le comportement par défaut du lien
-        const affiliationLink = button.getAttribute('href');
-        if (affiliationLink) {
-            redirectToAffiliation(affiliationLink); // Redirection automatique
-        } else {
-            console.log("Lien d'affiliation manquant pour ce bouton !");
-        }
-    });
-});
-
- </script>
-    
+        
  <script>
         // Script pour le filtrage des produits
         const filterButtons = document.querySelectorAll('.filter-btn');
