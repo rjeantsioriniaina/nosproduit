@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /private/  # Empêche l'accès à un répertoire privé (modifie si nécessaire)
+Allow: /
+
+Sitemap: https://rjeantsioriniaina.github.io/nosproduit/sitemap.xml  # Remplacer par l'URL de ton sitemap
