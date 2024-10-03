@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /nosproduit/  # Empêche l'exploration des pages sous /nosproduit/
-Allow: /                 # Autorise l'exploration de toutes les autres pages
-
-Sitemap: https://rjeantsioriniaina.github.io/nosproduit/sitemap.xml  # Remplacer par l'URL de ton sitemap
