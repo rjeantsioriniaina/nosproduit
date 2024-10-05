@@ -107,6 +107,38 @@ button.filter-btn:hover {
     }
 }
 
+        }
+        #nos-articles {
+            background-color: #f9f9f9;
+            padding: 20px;
+        }
+        #nos-articles h2 {
+            text-align: center;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        #nos-articles p {
+            text-align: center;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        #nos-articles ul {
+            list-style-type: none;
+            padding: 0;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        #nos-articles ul li {
+            margin: 10px 0;
+        }
+        #nos-articles ul li a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 18px;
+        }
+        #nos-articles ul li a:hover {
+            text-decoration: underline;
+    }
 /* Style pour le texte blanc sur fond sombre dans le pied de page */
 footer.bg-dark {
     background-color: #333333; /* Fond sombre (gris très foncé) */
@@ -292,7 +324,17 @@ p.description {
     <button class="filter-btn" data-category="CULTURE"><i class="fas fa-book"></i> CULTURE</button>
 </div>
 
-    <main>
+   <!-- Section Nos Articles -->
+    <section id="nos-articles">
+        <h2>Nos Articles</h2>
+        <p>Découvrez nos articles récents :</p>
+        <ul>
+            <!-- Lien vers ton fichier Markdown -->
+            <li><a href="https://rjeantsioriniaina.github.io/nosproduit/articles/Trading-pour-Débutants-Un-Guide-Complet-pour-Démarrer.html">Lire l'article sur Trading pour Débutants : Un Guide Complet pour Démarrer</a></li>
+            <!-- Ajouter d'autres articles -->
+            <li><a href="https://rjeantsioriniaina.github.io/nosproduit/articles/perte_de_poids_:_astuces_pour_maigrir_efficacement_et_sainement.html">Lire l'article Guide sur perte de poids : astuces pour maigrir efficacement et sainement</a></li>
+        </ul>
+    </section>
     <!-- Produit Trading -->
 <section class="product" data-category="ARGENT - TRAVAIL" itemscope itemtype="http://schema.org/Product">
     <h2 itemprop="name">Formation complète en ligne au TRADING</h2>
@@ -2108,15 +2150,6 @@ p.description {
     <meta name="description" content="Apprenez la stratégie de scalping pour maximiser vos gains en bourse et sur le marché Forex. Découvrez les techniques utilisées par les traders à succès.">
     <meta name="keywords" content="stratégie de scalping, scalping forex, trading bourse, trader professionnel, scalping rentable, techniques de trading, traders à succès, marché Forex, stratégies de trading">
     <section>
-            <h2>Nos Articles</h2>
-            <p>Découvrez nos articles récents :</p>
-            <ul>
-                <!-- Lien vers ton fichier Markdown -->
-                <li><a href="https://rjeantsioriniaina.github.io/nosproduit/articles/Trading-pour-Débutants-Un-Guide-Complet-pour-Démarrer.html">Lire l'article sur Trading pour Débutants : Un Guide Complet pour Démarrer</a>
-                <!-- Ajouter d'autres articles -->
-                <li><a href="https://rjeantsioriniaina.github.io/nosproduit/articles/perte_de_poids_:_astuces_pour_maigrir_efficacement_et_sainement.html">Lire l'article Guide sur perte de poids : astuces pour maigrir efficacement et sainement</a></li>
-            </ul>
-    </section>
 
 <!-- Section Témoignages -->
 <section id="testimonials">
@@ -2135,8 +2168,6 @@ p.description {
             <p class="message">"Un service incroyable et des produits de qualité. Très satisfait!"</p>
         </div>
     </div>
-
-        </section>
 
         <!-- Compte à Rebours -->
         <section id="countdown">
