@@ -338,6 +338,9 @@ p.description {
             <section id="nos-produits">
         <h2>Nos Produit disponibles</h2>
         <p>Découvrez nos produits récents :</p>
+                <!-- Ajoutez cette balise où vous voulez que la liste de produits soit affichée -->
+        <ul id="product-list"></ul>
+
             <ul>
                 <li><a href="professionnel/trader-parfaitement-smc.html">Trader-parfaitement-avec-smc</a></li>
                 <li><a href="professionnel/guide-ecrire-vendre-livr.html">Comment Écrire et Vendre Votre Propre Livre : Guide Ultime</a></li>
@@ -563,6 +566,67 @@ p.description {
 </footer>
   <!-- Lien vers ton fichier JavaScript -->
     <script src="js/script.js?v=2.5"></script>
+    <!-- Placez ce script avant la fermeture de la balise </body> -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const products = [
+        { name: 'Trader-parfaitement-avec-smc', link: 'professionnel/trader-parfaitement-smc.html' },
+        { name: 'Formation psychogenealogie', link: 'sante-beaute-nature/formation-psychogenealogie.html' },
+        { name: 'Le Miracle de la Grossesse', link: 'sante-beaute-nature/le-miracle-de-la-grossesse.html' },
+        { name: 'L\'Art de Vivre : Santé et Sérénité au Quotidien', link: 'sante-beaute-nature/art-de-vivre-sante-serenite.html' },
+        { name: 'Guide Complet de Gestion du Temps', link: 'sante-beaute-nature/guide-gestion-temps.html' },
+        { name: 'Les Secrets du Temps (promo)', link: 'sante-beaute-nature/secrets-du-temps.html' },
+        { name: 'Gagnez de l\'argent avec ChatGPT', link: 'internet/Gagnez de l\'argent avec ChatGPT.html' },
+        { name: 'Logiciel de Trading Forex', link: 'informatique/Logiciel-de-Trading-Forex.html' },
+        { name: 'Maison', link: 'maison/index.html' },
+        { name: 'Formation complète en ligne au TRADING', link: 'argent-travail/Formation_complèteau_TRADING.html' },
+        { name: 'Guide sur la classe des chevaux', link: 'argent-travail/Guide sur la classe des chevaux.html' },
+        { name: '10 Nouvelles gestions financière', link: 'argent-travail/nouvelles-gestions-financière.html' },
+        { name: 'Démarrez Votre Activité de Coaching', link: 'argent-travail/demarrez-votre-activite-coaching.html' },
+        { name: 'Empire à Royalties', link: 'argent-travail/empire-a-royalties.html' },
+        { name: 'Comprendre mon trading', link: 'argent-travail/comprendre-mon-trading.html' },
+        { name: 'Formation complète pour créer et optimiser votre compte KDP', link: 'argent-travail/pack-configuration.html' },
+        { name: 'La Machine À Clics - Trafic Web Ciblé', link: 'argent-travail/La Machine-a-Clics.html' },
+        { name: 'Stratégie de Scalping', link: 'argent-travail/Stratégie-de-Scalping.html' },
+        { name: 'Guide et outil pour générer des ebooks automatiquement', link: 'argent-travail/machine-a-royalties.html' },
+        { name: 'Logiciel IA Français pour business en ligne - MARKETPOWER-IA', link: 'argent-travail/MARKETPOWER-IA.html' },
+        { name: 'Profits Numériques 37', link: 'argent-travail/produit-profits-numeriques.html' },
+        { name: 'Découvrez MAGIK TURF X', link: 'jeux-divertissement/Produit-MAGIK-TURF-X.html' },
+        { name: 'Apprendre l\'Anglais Facilement', link: 'culture/apprendre-anglais-facilement.html' }
+    ];
+
+    const productList = document.getElementById('product-list');
+    const batchSize = 5; 
+    let currentIndex = 0;
+
+    function loadProducts() {
+        const fragment = document.createDocumentFragment();
+
+        for (let i = currentIndex; i < Math.min(currentIndex + batchSize, products.length); i++) {
+            const product = products[i];
+            const li = document.createElement('li');
+            const a = document.createElement('a');
+            a.href = product.link;
+            a.textContent = product.name;
+            li.appendChild(a);
+            fragment.appendChild(li);
+        }
+
+        productList.appendChild(fragment);
+        currentIndex += batchSize;
+    }
+
+    loadProducts();
+
+    window.addEventListener('scroll', function() {
+        if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            if (currentIndex < products.length) {
+                loadProducts();
+            }
+        }
+    });
+});
+</script>
 
 </body>
 </html>
