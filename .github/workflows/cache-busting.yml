@@ -1,6 +1,10 @@
 name: CI
 
-on: [push, pull_request]
+on: 
+  push:
+    branches: 
+      - main  # Mettez à jour avec votre branche principale
+  pull_request:
 
 jobs:
   build:
@@ -8,21 +12,15 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v3  # Mettez à jour vers la version 3
+        uses: actions/checkout@v4  # Mettez à jour vers la version 4
 
-      # Ajoutez d'autres étapes ici
+      - name: Set up Node.js
+        uses: actions/setup-node@v3  # Assurez-vous d'utiliser la dernière version
+        with:
+          node-version: '20'  # Spécifiez la version de Node.js que vous voulez
 
+      - name: Install dependencies
+        run: npm install
 
-      - name: Update CSS/JS version
-        run: |
-          # Ajouter un paramètre de version aléatoire à la fin des fichiers CSS/JS dans index.html
-          sed -i 's/\(main.js?v=\)[0-9]\+/\1'$RANDOM'/' index.html
-          sed -i 's/\(style.css?v=\)[0-9]\+/\1'$RANDOM'/' index.html
-
-      - name: Push changes back to GitHub
-        run: |
-          git config --global user.email "rjeantsioriniaina@gmail.com"
-          git config --global user.name "rjeantsioriniaina"
-          git add index.html
-          git commit -m "Cache busting for CSS/JS"
-          git push
+      - name: Run build
+        run: npm run build  # Remplacez cela par votre commande de construction
