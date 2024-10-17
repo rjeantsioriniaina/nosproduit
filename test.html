@@ -1,25 +1,159 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Formulaire</title>
+    <title>Accueil - Site d'Affiliation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        h2 {
+            color: #4CAF50;
+            margin-top: 20px;
+            font-size: 1.8em;
+        }
+
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 5px;
+            max-width: 800px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            padding: 5px;
+            transition: background-color 0.3s;
+            border-radius: 5px;
+        }
+
+        a:hover {
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 0.9em;
+            color: #666;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
 </head>
+
 <body>
-    <!-- Formulaire de capture d'e-mail -->
-<div class="container mt-5">
-    <h2 class="text-center mb-4">Inscrivez-vous à notre newsletter</h2>
-    <form action="https://formspree.io/f/xblrezwl" method="POST">
-        <div class="mb-3">
-            <label for="email" class="form-label">Votre e-mail :</label>
-            <input type="email" id="email" name="email" class="form-control" required>
-        </div>
-        <div class="form-check mb-3">
-            <input type="checkbox" id="consent" name="consent" class="form-check-input" required>
-            <label for="consent" class="form-check-label">Je consens à recevoir des e-mails de votre part.</label>
-        </div>
-        <button type="submit" class="btn btn-primary w-100">S'abonner</button>
-    </form>
-</div>
+    <header>
+        <h1>Bienvenue sur notre site d'affiliation</h1>
+        <p>Découvrez notre sélection de produits soigneusement choisis pour vous aider à atteindre vos objectifs
+            professionnels et personnels.</p>
+    </header>
+
+        <section class="about">
+        <h2>À Propos de Nous</h2>
+        <p>Nous sommes passionnés par la création de ressources qui aident nos clients à réussir. Notre sélection de produits est conçue pour répondre à vos besoins spécifiques.</p>
+    </section>
+
+    <section>
+        <h2>Nos Produits Phare</h2>
+        <ul>
+            <li>
+                <img src="images/trader.jpg" alt="Trader Parfaitement avec SMC">
+                <a href="professionnel/trader-parfaitement-smc.html">Trader Parfaitement avec SMC</a>
+              <p>Apprenez les bases du trading et développez vos compétences avec notre formation complète, adaptée aux débutants comme aux traders expérimentés.</p>
+            </li>
+            <li>
+                <img src="images/livre.jpg" alt="Guide Écrire et Vendre Votre Livre">
+                <a href="professionnel/guide-ecrire-vendre-livr.html">Comment Écrire et Vendre Votre Propre Livre : Guide Ultime</a>
+            </li>
+            <li>
+                <img src="images/gestion_temps.jpg" alt="Gestion du Temps et Votre Vie">
+                <a href="professionnel/gestion-du-temps-votre-vie.html">La Gestion du Temps et Votre Vie</a>
+            </li>
+            <li>
+                <img src="images/produit_flash.jpg" alt="Créer et Vendre Votre Produit">
+                <a href="professionnel/produit-flash.html">Créez et Vendez Votre Produit Rapidement</a>
+            </li>
+            <li>
+                <img src="images/livre_60jours.jpg" alt="Écrire et Vendre Votre Livre en 60 Jours">
+                <a href="professionnel/guide-ecrire-vendre-livre.html">Écrire et Vendre Votre Livre en 60 Jours : De l'Idée au Best-Seller</a>
+            </li>
+            <li>
+                <img src="images/chandeliers.jpg" alt="Stratégie Trading : Chandeliers Japonais">
+                <a href="professionnel/strategie-chandeliers-japonais.html">Stratégie Trading : Chandeliers Japonais</a>
+            </li>
+            <li>
+                <img src="images/dresser_chien.jpg" alt="Dresser Votre Chien en Un Temps Record">
+                <a href="professionnel/dresser-chien-temps-record.html">Comment Dresser Votre Chien en Un Temps Record</a>
+            </li>
+            <li>
+                <img src="images/optimiser_temps.jpg" alt="Guide pour Optimiser Votre Temps">
+                <a href="professionnel/Guide-pour-optimiser-votre-temps.html">Guide pour Optimiser Votre Production</a>
+            </li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Santé et Bien-être</h2>
+        <ul>
+            <li><a href="sante-beaute-nature/recettes-de-cuisine-faciles-pour-maigrir.html">58 Recettes de Cuisine Faciles pour Maigrir</a></li>
+            <li><a href="sante-beaute-nature/5-etapes-maigrir-facilement.html">Les 5 Étapes pour Maigrir Facilement</a></li>
+            <li><a href="sante-beaute-nature/methode-plus-jamais-acne.html">Méthode Plus Jamais Acné</a></li>
+            <li><a href="sante-beaute-nature/stop-hemorroïdes.html">Stop Hémorroïdes</a></li>
+            <li><a href="sante-beaute-nature/Apprenez-la-Réflexologie.html">Apprenez la Réflexologie Facilement</a></li>
+            <li><a href="sante-beaute-nature/Devenez-Naturopathe-Certifié.html">Devenez Naturopathe Certifié</a></li>
+            <li><a href="sante-beaute-nature/art-de-vivre-sante-serenite.html">L'Art de Vivre : Santé et Sérénité au Quotidien</a></li>
+        </ul>
+    </section>
+
+    <section>
+        <h2>Formation et Éducation</h2>
+        <ul>
+            <li><a href="argent-travail/Formation_complèteau_TRADING.html">Formation Complète en Ligne au Trading</a></li>
+            <li><a href="internet/Gagnez de l'argent avec ChatGPT.html">Gagnez de l'Argent avec ChatGPT</a></li>
+            <li><a href="argent-travail/Stratégie-de-Scalping.html">Stratégie de Scalping</a></li>
+            <li><a href="argent-travail/machine-a-royalties.html">Guide et Outil pour Générer des Ebooks Automatiquement</a></li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>Nous vous invitons à explorer ces ressources et à transformer votre vie dès aujourd'hui. Pour toute question, n'hésitez pas à nous contacter !</p>
+    </footer>
 </body>
+
 </html>
