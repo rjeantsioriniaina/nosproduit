@@ -267,6 +267,19 @@ nav {
     flex-wrap: wrap;
     gap: 10px;
 }
+.button {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #0050B3; /* Bleu plus foncé pour un meilleur contraste */
+    color: #FFFFFF;            /* Texte blanc, ce qui offre un bon contraste */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+
+.button:hover {
+    background-color: #003780; /* Bleu encore plus foncé pour le survol */
+}
 
 .nav-menu a {
     text-decoration: none;
