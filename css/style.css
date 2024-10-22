@@ -267,6 +267,11 @@ nav {
     flex-wrap: wrap;
     gap: 10px;
 }
+a, button {
+    padding: 12px 16px; /* Ajouter un espace interne */
+    font-size: 16px;    /* Agrandir la taille du texte */
+    margin: 10px;       /* Ajouter un espace entre les éléments interactifs */
+}
 .button {
     display: inline-block;
     padding: 12px 20px;
