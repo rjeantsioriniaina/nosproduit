@@ -82,3 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function toggleMenu(menuId) {
+    const menu = document.getElementById(menuId);
+    if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+    } else {
+        menu.classList.add('hidden');
+    }
+}
+
