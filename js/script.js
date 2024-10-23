@@ -85,10 +85,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function toggleMenu(menuId) {
     const menu = document.getElementById(menuId);
-    if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
+    if (menu) { // Vérifiez si l'élément existe
+        if (menu.classList.contains('hidden')) {
+            menu.classList.remove('hidden');
+        } else {
+            menu.classList.add('hidden');
+        }
     } else {
-        menu.classList.add('hidden');
+        console.error('Élément avec ID ' + menuId + ' non trouvé.');
     }
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Exécutez votre script ici
+    function toggleMenu(menuId) {
+        const menu = document.getElementById(menuId);
+        if (menu) {
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        } else {
+            console.error('Élément avec ID ' + menuId + ' non trouvé.');
+        }
+    }
+
+    // Exemple d'appel de la fonction toggleMenu
+    toggleMenu('votreMenuID'); // Remplacez 'votreMenuID' par l'ID de votre menu
+});
 
