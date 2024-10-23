@@ -82,4 +82,37 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    function toggleMenu(menuId) {
+        const menu = document.getElementById(menuId);
+        if (menu) {
+            console.log('Élément avec ID ' + menuId + ' trouvé.');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        } else {
+            console.error('Élément avec ID ' + menuId + ' non trouvé.');
+        }
+    }
+
+    // Exemple d'appel de la fonction toggleMenu avec des IDs de menus corrects
+    document.querySelector('[onclick="toggleMenu(\'sante-beaute-nature\')"]').addEventListener('click', function() {
+        toggleMenu('sante-beaute-nature');
+    });
+
+    document.querySelector('[onclick="toggleMenu(\'argent-travail\')"]').addEventListener('click', function() {
+        toggleMenu('argent-travail');
+    });
+
+    // Vérification de l'existence de l'élément cible
+    const elementCible = document.getElementById('elementCible');
+    if (elementCible) {
+        console.log('Élément "elementCible" trouvé.');
+        elementCible.textContent = "Le contenu a été mis à jour.";
+    } else {
+        console.error('Élément "elementCible" non trouvé.');
+    }
+});
 
