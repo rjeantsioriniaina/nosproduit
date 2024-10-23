@@ -112,6 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Exemple d'appel de la fonction toggleMenu
-    toggleMenu('votreMenuID'); // Remplacez 'votreMenuID' par l'ID de votre menu
+    toggleMenu('sante-beaute-nature');
+    toggleMenu('internet');
+    toggleMenu('argent-travail');
+    toggleMenu('informatique');
 });
 
