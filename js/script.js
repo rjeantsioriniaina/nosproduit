@@ -98,8 +98,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Exemple d'appel de la fonction toggleMenu
-    toggleMenu('sante-beaute-nature'); // Remplacez 'sante-beaute-nature' par l'ID de votre menu
-    toggleMenu('argent-travail'); // Remplacez 'argent-travail' par l'ID de votre menu
+    document.querySelector('[onclick="toggleMenu(\'sante-beaute-nature\')"]').addEventListener('click', function() {
+        toggleMenu('sante-beaute-nature');
+    });
+
+    document.querySelector('[onclick="toggleMenu(\'argent-travail\')"]').addEventListener('click', function() {
+        toggleMenu('argent-travail');
+    });
 
     // Assurez-vous que tous les éléments que vous souhaitez manipuler existent
     const element = document.getElementById('elementCible');
