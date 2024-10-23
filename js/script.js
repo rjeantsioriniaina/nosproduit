@@ -83,21 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-function toggleMenu(menuId) {
-    const menu = document.getElementById(menuId);
-    if (menu) { // Vérifiez si l'élément existe
-        if (menu.classList.contains('hidden')) {
-            menu.classList.remove('hidden');
-        } else {
-            menu.classList.add('hidden');
-        }
-    } else {
-        console.error('Élément avec ID ' + menuId + ' non trouvé.');
-    }
-}
-
 document.addEventListener('DOMContentLoaded', function() {
-    // Exécutez votre script ici
     function toggleMenu(menuId) {
         const menu = document.getElementById(menuId);
         if (menu) {
@@ -112,9 +98,14 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Exemple d'appel de la fonction toggleMenu
-    toggleMenu('sante-beaute-nature');
-    toggleMenu('internet');
-    toggleMenu('argent-travail');
-    toggleMenu('informatique');
-});
+    toggleMenu('sante-beaute-nature'); // Remplacez 'sante-beaute-nature' par l'ID de votre menu
+    toggleMenu('argent-travail'); // Remplacez 'argent-travail' par l'ID de votre menu
 
+    // Assurez-vous que tous les éléments que vous souhaitez manipuler existent
+    const element = document.getElementById('elementCible');
+    if (element) {
+        element.textContent = "Le contenu a été mis à jour.";
+    } else {
+        console.error('Élément "elementCible" non trouvé.');
+    }
+});
