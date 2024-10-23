@@ -1,4 +1,27 @@
 <style>
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin-bottom: 10px; /* Ajoute un espacement entre les liens */
+}
+
+nav ul li a {
+    display: block; /* Rend toute la zone du lien cliquable */
+    padding: 10px 20px; /* Augmente la taille de la zone cliquable */
+    font-size: 16px; /* Assure une taille de texte suffisante */
+    text-decoration: none; /* Enlève les soulignements par défaut */
+    color: #000; /* Couleur du texte */
+    background-color: #f0f0f0; /* Couleur de fond pour indiquer la zone cliquable */
+    border-radius: 5px; /* Ajoute des coins arrondis pour une meilleure apparence */
+}
+
+nav ul li a:hover {
+    background-color: #ddd; /* Change la couleur de fond au survol pour indiquer l'interaction */
+}
+
     /* Style général pour les boutons */
     .btn {
         background-color: #28a745;
