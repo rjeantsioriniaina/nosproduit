@@ -82,39 +82,3 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-document.addEventListener('DOMContentLoaded', function() {
-    function updateContent(elementId, content) {
-        const element = document.getElementById(elementId);
-        if (element) {
-            console.log('Élément "' + elementId + '" trouvé.');
-            element.textContent = content;
-        } else {
-            console.error('Élément "' + elementId + '" non trouvé.');
-        }
-    }
-
-    function toggleMenu(menuId) {
-        const menu = document.getElementById(menuId);
-        if (menu) {
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        } else {
-            console.error('Élément avec ID ' + menuId + ' non trouvé.');
-        }
-    }
-
-    // Appel de la fonction updateContent
-    updateContent('elementCible', 'Le contenu a été mis à jour.');
-
-    // Exemple d'appel de la fonction toggleMenu avec des IDs de menus corrects
-    document.querySelector('[onclick="toggleMenu(\'sante-beaute-nature\')"]').addEventListener('click', function() {
-        toggleMenu('sante-beaute-nature');
-    });
-
-    document.querySelector('[onclick="toggleMenu(\'argent-travail\')"]').addEventListener('click', function() {
-        toggleMenu('argent-travail');
-    });
-});
