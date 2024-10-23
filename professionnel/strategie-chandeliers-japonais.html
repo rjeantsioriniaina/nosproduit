@@ -35,14 +35,24 @@
         <h1>Stratégie de Trading des Chandeliers Japonais</h1>
         <nav>
             <ul>
+                <li><a href="#" onclick="toggleMenu('professionnel')">PROFESSIONNEL</a>
+                    <ul id="sante-beaute-nature" class="submenu hidden">
                 <li><a href="../professionnel/trader-parfaitement-smc.html">Trader-parfaitement-avec-smc</a></li>
                 <li><a href="../professionnel/guide-ecrire-vendre-livr.html">Comment Écrire et Vendre Votre Propre Livre : Guide Ultime</a></li>
                 <li><a href="../professionnel/gestion-du-temps-votre-vie.html">La Gestion du temps et votre vie</a></li>
+                    </ul>
+                </li>
+                <ul>
+            <li>
+                
                 <li><a href="../professionnel/produit-flash.html">Créez et vendez votre produit rapidement</a></li>
                 <li><a href="../professionnel/guide-ecrire-vendre-livre.html">Écrire et Vendre Votre Livre en 60 Jours : De l'Idée au Best-Seller</a></li>
                 <li><a href="../professionnel/strategie-chandeliers-japonais.html">Strategie trading chandeliers japonais</a></li>
                 <li><a href="../professionnel/dresser-chien-temps-record.html">Comment Dresser Votre Chien En Un Temps Record</a></li>
-                
+            </ul>
+        </li>
+                <li><a href="#" onclick="toggleMenu('sante-beaute-nature')">SANTE & BEAUTE</a>
+                    <ul id="sante-beaute-nature" class="submenu hidden">
                 <li><a href="../sante-beaute-nature/recettes-de-cuisine-faciles-pour-maigrir.html">58 recettes de cuisine faciles pour maigrir</a></li>
                 <li><a href="../sante-beaute-nature/5-etapes-maigrir-facilement.html">Les 5 etapes maigrir facilement</a></li>
                 <li><a href="../sante-beaute-nature/methode-plus-jamais-acne.html">Methode plus jamais acne</a></li>
@@ -145,6 +155,58 @@
         <p>&copy; 2024 NosProduits. Tous droits réservés.</p>
         <a href="https://rjeantsioriniaina.github.io/nosproduit/sitemap.xml">liste nosproduit</a>
     </footer>
+    <script>
+
+            document.addEventListener('DOMContentLoaded', function() {
+    function updateContent(elementId, content) {
+        const element = document.getElementById(elementId);
+        if (element) {
+            console.log('Élément "' + elementId + '" trouvé.');
+            element.textContent = content;
+        } else {
+            console.error('Élément "' + elementId + '" non trouvé.');
+        }
+    }
+
+
+    function toggleMenu(menuId) {
+        const menu = document.getElementById(menuId);
+        if (menu) {
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+            } else {
+                menu.classList.add('hidden');
+            }
+        } else {
+            console.error('Élément avec ID ' + menuId + ' non trouvé.');
+        }
+    }
+
+
+    // Appel de la fonction updateContent
+    updateContent('elementCible', 'Le contenu a été mis à jour.');
+
+
+    // Exemple d'appel de la fonction toggleMenu avec des IDs de menus corrects
+    document.querySelector('[onclick="toggleMenu(\'sante-beaute-nature\')"]').addEventListener('click', function() {
+        toggleMenu('sante-beaute-nature');
+    });
+
+
+    document.querySelector('[onclick="toggleMenu(\'argent-travail\')"]').addEventListener('click', function() {
+        toggleMenu('argent-travail');
+    });
+            document.querySelector('[onclick="toggleMenu(\'internet\')"]').addEventListener('click', function() {
+        toggleMenu('internet');
+    });
+            document.querySelector('[onclick="toggleMenu(\'informatique\')"]').addEventListener('click', function() {
+        toggleMenu('informatique');
+    });
+            document.querySelector('[onclick="toggleMenu(\'professionnel\')"]').addEventListener('click', function() {
+        toggleMenu('professionnel');
+    });
+});
+    </script>
 </body>
 </html>
 
