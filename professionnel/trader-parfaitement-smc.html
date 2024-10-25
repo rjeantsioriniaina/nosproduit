@@ -97,12 +97,12 @@
 
     <!-- Ajout du champ hasMerchantReturnPolicy -->
     <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
-        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnFiniteReturnWindow" /> <!-- Valeur d'énumération valide -->
+        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnUnlimitedWindow" /> <!-- Valeur d'énumération valide -->
         <meta itemprop="returnPolicyCountry" content="FR" />
         <meta itemprop="returnPolicyDays" content="30" />
         <meta itemprop="applicableCountry" content="FR" /> <!-- Champ applicableCountry ajouté -->
-        <meta itemprop="returnFees" content="https://schema.org/ReturnShippingFees" /> <!-- Ajout du champ returnFees -->
-        <meta itemprop="returnMethod" content="https://schema.org/ReturnByMail" /> <!-- Ajout du champ returnMethod -->
+        <meta itemprop="returnFees" content="https://schema.org/FreeReturn" /> <!-- Ajout du champ returnFees -->
+        <meta itemprop="returnMethod" content="https://schema.org/MailReturn" /> <!-- Ajout du champ returnMethod -->
     </div>
 
     <!-- Ajout du champ shippingDetails -->
@@ -115,21 +115,12 @@
             <meta itemprop="addressCountry" content="FR" /> <!-- Champ addressCountry ajouté -->
         </div>
         <div itemprop="deliveryTime" itemscope itemtype="https://schema.org/ShippingDeliveryTime">
-            <!-- Correction du type d'objet pour transitTime et handlingTime -->
-            <div itemprop="transitTime" itemscope itemtype="https://schema.org/QuantitativeValue">
-                <meta itemprop="value" content="3" />
-                <meta itemprop="unitText" content="days" />
-            </div>
-            <div itemprop="handlingTime" itemscope itemtype="https://schema.org/QuantitativeValue">
-                <meta itemprop="value" content="2" />
-                <meta itemprop="unitText" content="days" />
-            </div>
+            <meta itemprop="transitTime" content="3 days" /> <!-- Utilisez "3 days" pour éviter les erreurs -->
+            <meta itemprop="handlingTime" content="2 days" /> <!-- Utilisez "2 days" pour éviter les erreurs -->
             <meta itemprop="name" content="3-5 jours ouvrables" />
         </div>
     </div>
 </div>
-
-
 
     <!-- Balisage des avis -->    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
         <meta itemprop="ratingValue" content="4.9" />
