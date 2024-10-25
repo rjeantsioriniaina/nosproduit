@@ -97,32 +97,29 @@
 
     <!-- Ajout du champ hasMerchantReturnPolicy -->
     <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
-        <meta itemprop="returnPolicyCategory" content="https://schema.org/ReturnShippingFees" />
+        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnUnlimitedWindow" /> <!-- Valeur d'énumération valide -->
         <meta itemprop="returnPolicyCountry" content="FR" />
         <meta itemprop="returnPolicyDays" content="30" />
-        <!-- Ajout du champ applicableCountry -->
-        <meta itemprop="applicableCountry" content="FR" />
+        <meta itemprop="applicableCountry" content="FR" /> <!-- Champ applicableCountry ajouté -->
     </div>
 
     <!-- Ajout du champ shippingDetails -->
     <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
         <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
-            <meta itemprop="currency" content="EUR" /> <!-- Ajout du champ currency -->
-            <meta itemprop="value" content="5.99" /> <!-- Ajout du champ value -->
+            <meta itemprop="currency" content="EUR" /> <!-- Champ currency ajouté -->
+            <meta itemprop="value" content="5.99" /> <!-- Champ value ajouté -->
         </div>
         <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
-            <meta itemprop="addressCountry" content="FR" /> <!-- Ajout du champ addressCountry -->
+            <meta itemprop="addressCountry" content="FR" /> <!-- Champ addressCountry ajouté -->
         </div>
         <div itemprop="deliveryTime" itemscope itemtype="https://schema.org/ShippingDeliveryTime">
-            <meta itemprop="transitTime" content="P3D" /> <!-- Temps de transit en jours -->
-            <meta itemprop="handlingTime" content="P2D" /> <!-- Temps de traitement en jours -->
+            <meta itemprop="transitTime" content="P3D" /> <!-- Correct pour le type d'objet transitTime -->
+            <meta itemprop="handlingTime" content="P2D" /> <!-- Correct pour le type d'objet handlingTime -->
             <meta itemprop="name" content="3-5 jours ouvrables" />
         </div>
     </div>
 </div>
-
-    <!-- Balisage des avis -->
-    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+    <!-- Balisage des avis -->    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
         <meta itemprop="ratingValue" content="4.9" />
         <meta itemprop="reviewCount" content="25" />
     </div>
