@@ -101,6 +101,8 @@
         <meta itemprop="returnPolicyCountry" content="FR" />
         <meta itemprop="returnPolicyDays" content="30" />
         <meta itemprop="applicableCountry" content="FR" /> <!-- Champ applicableCountry ajouté -->
+        <meta itemprop="returnFees" content="https://schema.org/FreeReturn" /> <!-- Ajout du champ returnFees -->
+        <meta itemprop="returnMethod" content="https://schema.org/MailReturn" /> <!-- Ajout du champ returnMethod -->
     </div>
 
     <!-- Ajout du champ shippingDetails -->
@@ -113,12 +115,13 @@
             <meta itemprop="addressCountry" content="FR" /> <!-- Champ addressCountry ajouté -->
         </div>
         <div itemprop="deliveryTime" itemscope itemtype="https://schema.org/ShippingDeliveryTime">
-            <meta itemprop="transitTime" content="P3D" /> <!-- Correct pour le type d'objet transitTime -->
-            <meta itemprop="handlingTime" content="P2D" /> <!-- Correct pour le type d'objet handlingTime -->
+            <meta itemprop="transitTime" content="3 days" /> <!-- Utilisez "3 days" pour éviter les erreurs -->
+            <meta itemprop="handlingTime" content="2 days" /> <!-- Utilisez "2 days" pour éviter les erreurs -->
             <meta itemprop="name" content="3-5 jours ouvrables" />
         </div>
     </div>
 </div>
+
     <!-- Balisage des avis -->    <div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
         <meta itemprop="ratingValue" content="4.9" />
         <meta itemprop="reviewCount" content="25" />
