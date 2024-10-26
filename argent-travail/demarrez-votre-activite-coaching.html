@@ -96,22 +96,42 @@
     <!-- Balisage des offres -->
 <div itemprop="offers" itemscope itemtype="https://schema.org/Offer">
     <meta itemprop="priceCurrency" content="EUR" />
-    <meta itemprop="price" content="49.99" />
+    <meta itemprop="price" content="110.99" />
     <link itemprop="availability" href="https://schema.org/InStock" />
     <meta itemprop="priceValidUntil" content="2024-12-31" /> <!-- Ajoutez cette ligne avec votre date -->
-</div>
-<!-- Ajout du champ hasMerchantReturnPolicy -->
-<div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
-    <meta itemprop="returnPolicyCategory" content="https://schema.org/ReturnShippingFees" />
-    <meta itemprop="returnPolicyCountry" content="FR" />
-    <meta itemprop="returnPolicyDays" content="30" />
-</div>
 
-<!-- Ajout du champ shippingDetails -->
-<div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
-    <meta itemprop="shippingRate" content="5.99" />
-    <meta itemprop="shippingDestination" content="FR" />
-    <meta itemprop="deliveryTime" content="3-5 jours ouvrables" />
+    <!-- Ajout du champ hasMerchantReturnPolicy -->
+    <div itemprop="hasMerchantReturnPolicy" itemscope itemtype="https://schema.org/MerchantReturnPolicy">
+        <meta itemprop="returnPolicyCategory" content="https://schema.org/MerchantReturnUnlimitedWindow" /> <!-- Valeur d'énumération valide -->
+        <meta itemprop="returnPolicyCountry" content="FR" />
+        <meta itemprop="returnPolicyDays" content="30" />
+        <meta itemprop="applicableCountry" content="FR" /> <!-- Champ applicableCountry ajouté -->
+        <meta itemprop="returnFees" content="https://schema.org/FreeReturn" /> <!-- Ajout du champ returnFees -->
+        <meta itemprop="returnMethod" content="https://schema.org/MailReturn" /> <!-- Ajout du champ returnMethod -->
+    </div>
+
+    <!-- Ajout du champ shippingDetails -->
+    <div itemprop="shippingDetails" itemscope itemtype="https://schema.org/OfferShippingDetails">
+        <div itemprop="shippingRate" itemscope itemtype="https://schema.org/MonetaryAmount">
+            <meta itemprop="currency" content="EUR" /> <!-- Champ currency ajouté -->
+            <meta itemprop="value" content="5.99" /> <!-- Champ value ajouté -->
+        </div>
+        <div itemprop="shippingDestination" itemscope itemtype="https://schema.org/DefinedRegion">
+            <meta itemprop="addressCountry" content="FR" /> <!-- Champ addressCountry ajouté -->
+        </div>
+        <div itemprop="deliveryTime" itemscope itemtype="https://schema.org/ShippingDeliveryTime">
+            <!-- Correction du type d'objet pour transitTime et handlingTime -->
+            <div itemprop="transitTime" itemscope itemtype="https://schema.org/QuantitativeValue">
+                <meta itemprop="value" content="3" />
+                <meta itemprop="unitText" content="days" />
+            </div>
+            <div itemprop="handlingTime" itemscope itemtype="https://schema.org/QuantitativeValue">
+                <meta itemprop="value" content="2" />
+                <meta itemprop="unitText" content="days" />
+            </div>
+            <meta itemprop="name" content="3-5 jours ouvrables" />
+        </div>
+    </div>
 </div>
 
 
