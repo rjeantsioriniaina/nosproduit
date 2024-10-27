@@ -33,58 +33,16 @@
 <body>
     <header>
         <h1>Trader Parfaitement avec la SMC</h1>
-        <nav>
+        
             <ul>
-                <li><a href="../index.html">Accueil</a></li>
-                <li><a href="#" onclick="toggleMenu('professionnel')">Professionnel</a>
-                    <ul id="professionnel" class="submenu hidden">
-                <li><a href="../professionnel/gestion-du-temps-votre-vie.html">La Gestion du Temps</a></li>
-                <li><a href="../professionnel/produit-flash.html">Vendre Votre Produit Rapidement</a></li>
-                <li><a href="../professionnel/strategie-chandeliers-japonais.html">Stratégie Chandeliers Japonais</a></li>
-                <li><a href="../professionnel/dresser-chien-temps-record.html">Dresser Votre Chien</a></li>
-                  </ul>
-                </li>
-                <li><a href="#" onclick="toggleMenu('sante-beaute-nature')">Santé & Beauté</a>
-                    <ul id="sante-beaute-nature" class="submenu hidden">
-                        <li><a href="../sante-beaute-nature/recettes-de-cuisine-faciles-pour-maigrir.html">Recettes de Cuisine Faciles</a></li>
-                        <li><a href="../sante-beaute-nature/5-etapes-maigrir-facilement.html">Les 5 Étapes pour Maigrir</a></li>
-                        <li><a href="../sante-beaute-nature/methode-plus-jamais-acne.html">Méthode Plus Jamais Acné</a></li>
-                        <li><a href="../sante-beaute-nature/stop-hemorroïdes.html">Stop Hémorroïdes</a></li>
-                        <li><a href="../sante-beaute-nature/Apprenez-la-Réflexologie.html">Apprenez la Réflexologie Facilement</a></li>
-                        <li><a href="../sante-beaute-nature/Devenez-Naturopathe-Certifié.html">Devenez Naturopathe Certifié</a></li>
-                        <li><a href="../sante-beaute-nature/formation-psychogenealogie.html">Formation Psychogénéalogie</a></li>
-                        <li><a href="../sante-beaute-nature/le-miracle-de-la-grossesse.html">Le Miracle de la Grossesse</a></li>
-                        <li><a href="../sante-beaute-nature/art-de-vivre-sante-serenite.html">L'Art de Vivre : Santé et Sérénité au Quotidien</a></li>
-                        <li><a href="../sante-beaute-nature/guide-gestion-temps.html">Guide Complet de Gestion du Temps</a></li>
-                        <li><a href="../sante-beaute-nature/secrets-du-temps.html">Les Secrets du Temps</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" onclick="toggleMenu('internet')">Internet</a>
-                    <ul id="internet" class="submenu hidden">
-                        <li><a href="../internet/Gagnez de l'argent avec ChatGPT.html">Gagnez de l'Argent avec ChatGPT</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" onclick="toggleMenu('informatique')">Informatique</a>
-                    <ul id="informatique" class="submenu hidden">
-                        <li><a href="../informatique/Logiciel-de-Trading-Forex.html">Logiciel de Trading Forex - Robot 100% Automatisé</a></li>
-                        <li><a href="../jeux-divertissement/Produit-MAGIK-TURF-X.html">Découvrez MAGIK TURF X</a></li>
-                        <li><a href="../culture/apprendre-anglais-facilement.html">Apprendre l'Anglais Facilement</a></li>
-                    </ul>
-                </li>
-                <li><a href="#" onclick="toggleMenu('argent-travail')">Argent & Travail</a>
-                    <ul id="argent-travail" class="submenu hidden">
-                        <li><a href="../argent-travail/Formation-trading.html">Formation complète en ligne au TRADING</a></li>
-                        <li><a href="../argent-travail/Guide sur la classe des chevaux.html">Guide sur la classe des chevaux</a></li>
-                        <li><a href="../argent-travail/nouvelles-gestions-financière.html">10 Nouvelles gestions financière</a></li>
-                        <li><a href="../argent-travail/demarrez-votre-activite-coaching.html">Démarrez Votre Activité de Coaching</a></li>
-                        <li><a href="../argent-travail/empire-a-royalties.html">Empire à Royalties</a></li>
-                        <li><a href="../argent-travail/comprendre-mon-trading.html">Comprendre mon trading</a></li>
-            
-            </ul>
-        </nav>
+                <li><a href="../index.html" class="button">Accueil</a></li>
+        
+                <li><a href="../professionnel/gestion-du-temps-votre-vie.html" class="button">La Gestion du Temps</a></li>
+                <li><a href="../professionnel/produit-flash.html" class="button">Vendre Votre Produit Rapidement</a></li>
+                <li><a href="../argent-travail/nouvelles-gestions-financière.html" class="button">10 Nouvelles gestions financière</a></li>
+        </ul>
     </header>
-    <div id="elementCible">Texte original</div>
-
+    
     <main>
         <!-- Section produit pour "Trader Parfaitement avec la SMC" avec schema.org -->
         <section class="product" data-category="PROFESSIONNELS" itemscope itemtype="https://schema.org/Product">
@@ -184,55 +142,9 @@
 
     <footer>
         <p>&copy; 2024 NosProduits. Tous droits réservés.</p>
-        <a href="https://rjeantsioriniaina.github.io/nosproduit/sitemap.xml">listes nos produits</a>
+        <a href="https://rjeantsioriniaina.github.io/nosproduit/sitemap.xml" class="button">listes nos produits</a>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-    function updateContent(elementId, content) {
-        const element = document.getElementById(elementId);
-        if (element) {
-            console.log('Élément "' + elementId + '" trouvé.');
-            element.textContent = content;
-        } else {
-            console.error('Élément "' + elementId + '" non trouvé.');
-        }
-    }
-            function toggleMenu(menuId) {
-        const menu = document.getElementById(menuId);
-        if (menu) {
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden');
-            } else {
-                menu.classList.add('hidden');
-            }
-        } else {
-            console.error('Élément avec ID ' + menuId + ' non trouvé.');
-        }
-            }
-            // Appel de la fonction updateContent
-    updateContent('elementCible', 'Le contenu a été mis à jour.');
-
-
-    // Exemple d'appel de la fonction toggleMenu avec des IDs de menus corrects
-    document.querySelector('[onclick="toggleMenu(\'sante-beaute-nature\')"]').addEventListener('click', function() {
-        toggleMenu('sante-beaute-nature');
-    });
-
-
-    document.querySelector('[onclick="toggleMenu(\'argent-travail\')"]').addEventListener('click', function() {
-        toggleMenu('argent-travail');
-    });
-            document.querySelector('[onclick="toggleMenu(\'internet\')"]').addEventListener('click', function() {
-        toggleMenu('internet');
-    });
-            document.querySelector('[onclick="toggleMenu(\'informatique\')"]').addEventListener('click', function() {
-        toggleMenu('informatique');
-    });
-            document.querySelector('[onclick="toggleMenu(\'professionnel\')"]').addEventListener('click', function() {
-        toggleMenu('professionnel');
-    });
-});
-    </script>
+    
 </body>
 </html>
 
